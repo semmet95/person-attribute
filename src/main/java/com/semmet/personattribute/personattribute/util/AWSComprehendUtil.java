@@ -8,8 +8,10 @@ import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.comprehend.ComprehendClient;
 import software.amazon.awssdk.services.comprehend.model.ComprehendException;
 import software.amazon.awssdk.services.comprehend.model.DetectEntitiesRequest;
+import software.amazon.awssdk.services.comprehend.model.DetectKeyPhrasesRequest;
 import software.amazon.awssdk.services.comprehend.model.DetectSentimentRequest;
 import software.amazon.awssdk.services.comprehend.model.Entity;
+import software.amazon.awssdk.services.comprehend.model.KeyPhrase;
 
 public class AWSComprehendUtil {
     
@@ -26,8 +28,6 @@ public class AWSComprehendUtil {
 
     public static Map<String, Float> detectSentiment(String text, String langCode) {
         try {
-            AppLogger.LOGGER.info("Calling Comprehend DetectSentiment API");
-
             var detectSentimentRequest = DetectSentimentRequest.builder()
                                                             .text(text)
                                                             .languageCode(langCode)
@@ -54,7 +54,7 @@ public class AWSComprehendUtil {
         }
     }
 
-    public static void detectAllEntities(String text, String langCode) {
+    public static Map<String, Float> detectAllEntities(String text, String langCode) {
 
         try {
             var detectEntitiesRequest = DetectEntitiesRequest.builder()
@@ -65,19 +65,57 @@ public class AWSComprehendUtil {
             var detectEntitiesResult = COM_CLIENT.detectEntities(detectEntitiesRequest);
             List<Entity> entList = detectEntitiesResult.entities();
 
+            Map<String, Float> entityScoreMap = new HashMap<>();
 
             if(!entList.isEmpty()) {
+
                 for(Entity entity: entList) {
                     AppLogger.LOGGER.info(String.format("Entity detected %s with score %f", entity.text(), entity.score()));
+                    entityScoreMap.put(entity.text(), entity.score());
                 }
             }
             else {
                 AppLogger.LOGGER.info("no entities detected");
             }
 
+            return entityScoreMap;
+
         } catch (ComprehendException e) {
             AppLogger.LOGGER.error(e.awsErrorDetails().errorMessage());
-            //return null;
+            return null;
        }
+    }
+
+    public static Map<String, Float> detectAllKeyPhrases(String text, String langCode) {
+
+        try {
+            var detectKeyPhrasesRequest = DetectKeyPhrasesRequest.builder()
+                                                                    .text(text)
+                                                                    .languageCode(langCode)
+                                                                    .build();
+
+            var detectKeyPhrasesResult = COM_CLIENT.detectKeyPhrases(detectKeyPhrasesRequest);
+
+            List<KeyPhrase> phraseList = detectKeyPhrasesResult.keyPhrases();
+
+            Map<String, Float> keyPhraseConfidenceMap = new HashMap<>();
+
+            if(!phraseList.isEmpty()) {
+
+                for(var keyPhrase: phraseList) {
+                    AppLogger.LOGGER.info(String.format("detected key phrase:%s with confidence:%f", keyPhrase.text(), keyPhrase.score()));
+                    keyPhraseConfidenceMap.put(keyPhrase.text(), keyPhrase.score());
+                }
+
+            } else {
+                AppLogger.LOGGER.info("no key phrases detected");
+            }
+
+            return keyPhraseConfidenceMap;
+
+        } catch (ComprehendException e) {
+            AppLogger.LOGGER.error(e.awsErrorDetails().errorMessage());
+            return null;
+        }
     }
 }

@@ -28,6 +28,8 @@ public class TextDataController {
 
     @PostMapping(produces = "application/json", consumes = "application/x-www-form-urlencoded;charset=UTF-8")
     public void addTextData(@RequestParam Map<String, String> body) {
-        var text = body.get("text-data");
+        var textData = body.get("text-data");
+
+        
     }
 }

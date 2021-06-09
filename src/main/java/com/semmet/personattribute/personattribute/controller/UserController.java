@@ -30,7 +30,7 @@ public class UserController {
     @PostMapping(produces = "application/json", consumes = "application/x-www-form-urlencoded;charset=UTF-8")
     public Users addUser(@RequestParam Map<String, String> body) {
         
-        Users user = new Users();
+        var user = new Users();
         user.setAge(Integer.parseInt(body.get("age")));
         user.setCity(body.get("city"));
         user.setGender(body.get("gender"));
