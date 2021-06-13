@@ -27,8 +27,6 @@ public class Users {
     private int age;
     private String gender;
 
-    public Users() {
-    }
 
     public long getId() {
         return this.id;

@@ -4,7 +4,6 @@ import java.util.Map;
 
 import com.semmet.personattribute.personattribute.model.Users;
 import com.semmet.personattribute.personattribute.repository.UserRepository;
-import com.semmet.personattribute.personattribute.util.AWSComprehendUtil;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,8 +21,6 @@ public class UserController {
 
     @GetMapping(produces = "application/json")
     public Iterable<Users> getUsers() {
-        AWSComprehendUtil.detectAllEntities("so this is how it ends, down an arm killed by an android, why does this feel oddly familiar", "en");
-
         return userRepository.findAll();
     }
 
