@@ -12,7 +12,7 @@ public class UserEntityMappings {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private long userId;
-    private long entitiesId;
+    private long entityId;
     private float weight;
     private long frequency;
     private float sentimentNeutral;
@@ -84,12 +84,11 @@ public class UserEntityMappings {
         this.userId = userId;
     }
 
-    public long getEntitiesId() {
-        return this.entitiesId;
+    public long getEntityId() {
+        return this.entityId;
     }
 
-    public void setEntitiesId(long entitiesId) {
-        this.entitiesId = entitiesId;
+    public void setEntityId(long entityId) {
+        this.entityId = entityId;
     }
-
 }

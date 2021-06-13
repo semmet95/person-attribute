@@ -43,17 +43,17 @@ public class TextDataController {
         KeyPhrases[] allKeyPhrases = textAnalysisService.getKeyPhrasesObjects();
 
         // update the DB
-        Map<Entities, Long> entityIdMapping = new HashMap<>();
-        Map<KeyPhrases, Long> keyPhraseIdMapping = new HashMap<>();
+        Map<String, Long> entityIdMapping = new HashMap<>();
+        Map<String, Long> keyPhraseIdMapping = new HashMap<>();
 
         for(var entity: allEntities) {
             var savedEntity = entitiesRepository.save(entity);
-            entityIdMapping.put(entity, savedEntity.getId());
+            entityIdMapping.put(entity.getEntity(), savedEntity.getId());
         }
 
         for(var keyPhrase: allKeyPhrases) {
             var savedKeyPhrase = keyPhrasesRepository.save(keyPhrase);
-            keyPhraseIdMapping.put(keyPhrase, savedKeyPhrase.getId());
+            keyPhraseIdMapping.put(keyPhrase.getKeyPhrase(), savedKeyPhrase.getId());
         }
 
     }

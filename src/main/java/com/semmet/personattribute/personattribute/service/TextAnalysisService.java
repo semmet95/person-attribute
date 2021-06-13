@@ -5,7 +5,6 @@ import java.util.Map;
 import com.semmet.personattribute.personattribute.model.Entities;
 import com.semmet.personattribute.personattribute.model.KeyPhrases;
 import com.semmet.personattribute.personattribute.model.UserEntityMappings;
-import com.semmet.personattribute.personattribute.model.UserKeyPhraseMappings;
 import com.semmet.personattribute.personattribute.util.AWSComprehendUtil;
 import com.semmet.personattribute.personattribute.util.AppLogger;
 
@@ -94,19 +93,28 @@ public class TextAnalysisService {
         return allKeyPhrases;
     }
 
-    /*public UserEntityMappings[] getUserEntityMappingsObjects(long userId, long entitiesId, Map<String, Float> entityScoreMap, Map<String, Float> sentimentMap) {
+    public UserEntityMappings[] getUserEntityMappingsObjects(long userId, Map<String, Long> entityIdMapping, Map<String, Long> entityScoreMap, Map<String, Float> sentimentMap) {
         
         UserEntityMappings[] allUserEntityMappings = new UserEntityMappings[entityScoreMap.size()];
         var index = 0;
 
-        for(var ueMappings: allUserEntityMappings.keySet()) {
+        for(var entity: entityScoreMap.keySet()) {
 
             var tempueMappings = new UserEntityMappings();
-            tempueMappings.setEntitiesId(entitiesId);
+            tempueMappings.setEntityId(entityIdMapping.get(entity));
+            tempueMappings.setUserId(userId);
+
+            //if()
+                tempueMappings.setFrequency(1);
+                tempueMappings.setSentimentMixed(sentimentMap.get("mixed"));
+                tempueMappings.setSentimentNegative(sentimentMap.get("negative"));
+                tempueMappings.setSentimentNeutral(sentimentMap.get("neutral"));
+                tempueMappings.setSentimentPositive(sentimentMap.get("positive"));
+                tempueMappings.setWeight(entityScoreMap.get(entity));
 
             allUserEntityMappings[index++] = tempueMappings;
         }
 
         return allUserEntityMappings;
-    }*/
+    }
 }
