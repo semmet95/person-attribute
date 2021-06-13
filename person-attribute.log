@@ -1,303 +1,162 @@
-2021-06-09 02:34:23.660  INFO 22598 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Starting PersonAttributeApplication using Java 11.0.11 on Bella with PID 22598 (/home/amit/Projects/JAVA/Spring/spring boot/person-attribute/bin/main started by amit in /home/amit/Projects/JAVA/Spring/spring boot/person-attribute)
-2021-06-09 02:34:23.875  INFO 22598 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : No active profile set, falling back to default profiles: default
-2021-06-09 02:34:24.411  INFO 22598 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-06-09 02:34:24.412  INFO 22598 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-06-09 02:34:26.989  INFO 22598 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-06-09 02:34:27.139  INFO 22598 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 130 ms. Found 5 JPA repository interfaces.
-2021-06-09 02:34:28.888  INFO 22598 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-06-09 02:34:28.910  INFO 22598 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-06-09 02:34:28.911  INFO 22598 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
-2021-06-09 02:34:29.348  INFO 22598 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-06-09 02:34:29.349  INFO 22598 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4934 ms
-2021-06-09 02:34:29.988  INFO 22598 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-06-09 02:34:30.090  INFO 22598 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
-2021-06-09 02:34:30.620  INFO 22598 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-06-09 02:34:30.937  INFO 22598 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-06-09 02:34:30.963  WARN 22598 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2021-06-09 02:34:33.012  INFO 22598 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-06-09 02:34:33.126  INFO 22598 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
-2021-06-09 02:34:35.630  INFO 22598 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-06-09 02:34:35.650  INFO 22598 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-06-09 02:34:36.461  WARN 22598 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'textDataController': Unsatisfied dependency expressed through field 'userEntityMappings'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.semmet.personattribute.personattribute.model.UserEntityMappings' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-2021-06-09 02:34:36.464  INFO 22598 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-06-09 02:34:36.473  INFO 22598 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-06-09 02:34:36.492  INFO 22598 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-06-09 02:34:36.496  INFO 22598 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2021-06-09 02:34:36.520  INFO 22598 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-06-09 02:34:36.595 ERROR 22598 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field userEntityMappings in com.semmet.personattribute.personattribute.controller.TextDataController required a bean of type 'com.semmet.personattribute.personattribute.model.UserEntityMappings' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.semmet.personattribute.personattribute.model.UserEntityMappings' in your configuration.
-
-2021-06-09 02:43:31.117  INFO 23069 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Starting PersonAttributeApplication using Java 11.0.11 on Bella with PID 23069 (/home/amit/Projects/JAVA/Spring/spring boot/person-attribute/bin/main started by amit in /home/amit/Projects/JAVA/Spring/spring boot/person-attribute)
-2021-06-09 02:43:31.129  INFO 23069 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : No active profile set, falling back to default profiles: default
-2021-06-09 02:43:31.296  INFO 23069 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-06-09 02:43:31.297  INFO 23069 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-06-09 02:43:32.813  INFO 23069 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-06-09 02:43:32.938  INFO 23069 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 108 ms. Found 5 JPA repository interfaces.
-2021-06-09 02:43:34.235  INFO 23069 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-06-09 02:43:34.256  INFO 23069 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-06-09 02:43:34.257  INFO 23069 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
-2021-06-09 02:43:34.481  INFO 23069 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-06-09 02:43:34.482  INFO 23069 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3184 ms
-2021-06-09 02:43:34.887  INFO 23069 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-06-09 02:43:34.984  INFO 23069 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
-2021-06-09 02:43:35.269  INFO 23069 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-06-09 02:43:35.482  INFO 23069 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-06-09 02:43:35.492  WARN 23069 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2021-06-09 02:43:36.193  INFO 23069 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-06-09 02:43:36.246  INFO 23069 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
-2021-06-09 02:43:37.676  INFO 23069 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-06-09 02:43:37.691  INFO 23069 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-06-09 02:43:38.780  WARN 23069 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-06-09 02:43:39.714  INFO 23069 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-06-09 02:43:39.830  INFO 23069 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2021-06-09 02:43:39.851  INFO 23069 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Started PersonAttributeApplication in 10.254 seconds (JVM running for 11.829)
-2021-06-09 02:43:39.856  INFO 23069 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
-2021-06-09 02:43:39.862  INFO 23069 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
-2021-06-09 02:44:33.454  INFO 23069 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-06-09 02:44:33.456  INFO 23069 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-06-09 02:44:33.459  INFO 23069 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2021-06-09 02:50:20.620  INFO 23341 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Starting PersonAttributeApplication using Java 11.0.11 on Bella with PID 23341 (/home/amit/Projects/JAVA/Spring/spring boot/person-attribute/bin/main started by amit in /home/amit/Projects/JAVA/Spring/spring boot/person-attribute)
-2021-06-09 02:50:20.628  INFO 23341 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : No active profile set, falling back to default profiles: default
-2021-06-09 02:50:20.908  INFO 23341 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-06-09 02:50:20.909  INFO 23341 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-06-09 02:50:22.958  INFO 23341 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-06-09 02:50:23.192  INFO 23341 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 210 ms. Found 5 JPA repository interfaces.
-2021-06-09 02:50:24.914  INFO 23341 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-06-09 02:50:24.958  INFO 23341 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-06-09 02:50:24.959  INFO 23341 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
-2021-06-09 02:50:25.171  INFO 23341 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-06-09 02:50:25.171  INFO 23341 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4261 ms
-2021-06-09 02:50:25.709  INFO 23341 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-06-09 02:50:25.820  INFO 23341 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
-2021-06-09 02:50:26.167  INFO 23341 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-06-09 02:50:26.419  INFO 23341 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-06-09 02:50:26.439  WARN 23341 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2021-06-09 02:50:27.539  INFO 23341 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-06-09 02:50:27.605  INFO 23341 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
-2021-06-09 02:50:29.557  INFO 23341 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-06-09 02:50:29.576  INFO 23341 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-06-09 02:50:30.936  WARN 23341 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-06-09 02:50:31.799  INFO 23341 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-06-09 02:50:31.947  INFO 23341 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2021-06-09 02:50:31.981  INFO 23341 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Started PersonAttributeApplication in 12.526 seconds (JVM running for 14.541)
-2021-06-09 02:50:31.990  INFO 23341 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
-2021-06-09 02:50:32.005  INFO 23341 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
-2021-06-09 02:52:00.849  INFO 23341 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-06-09 02:52:00.854  INFO 23341 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-06-09 02:52:00.859  INFO 23341 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2021-06-09 02:52:56.928  INFO 23485 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Starting PersonAttributeApplication using Java 11.0.11 on Bella with PID 23485 (/home/amit/Projects/JAVA/Spring/spring boot/person-attribute/bin/main started by amit in /home/amit/Projects/JAVA/Spring/spring boot/person-attribute)
-2021-06-09 02:52:56.940  INFO 23485 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : No active profile set, falling back to default profiles: default
-2021-06-09 02:52:57.136  INFO 23485 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-06-09 02:52:57.137  INFO 23485 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-06-09 02:52:59.171  INFO 23485 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-06-09 02:52:59.361  INFO 23485 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 170 ms. Found 5 JPA repository interfaces.
-2021-06-09 02:53:01.133  INFO 23485 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-06-09 02:53:01.157  INFO 23485 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-06-09 02:53:01.159  INFO 23485 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
-2021-06-09 02:53:01.386  INFO 23485 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-06-09 02:53:01.387  INFO 23485 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4247 ms
-2021-06-09 02:53:01.848  INFO 23485 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-06-09 02:53:01.934  INFO 23485 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
-2021-06-09 02:53:02.217  INFO 23485 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-06-09 02:53:02.656  INFO 23485 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-06-09 02:53:02.674  WARN 23485 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2021-06-09 02:53:04.366  INFO 23485 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-06-09 02:53:04.571  INFO 23485 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
-2021-06-09 02:53:07.564  INFO 23485 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-06-09 02:53:07.595  INFO 23485 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-06-09 02:53:09.631  WARN 23485 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-06-09 02:53:11.083  INFO 23485 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-06-09 02:53:11.360  INFO 23485 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2021-06-09 02:53:11.493  INFO 23485 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Started PersonAttributeApplication in 15.67 seconds (JVM running for 16.898)
-2021-06-09 02:53:11.501  INFO 23485 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
-2021-06-09 02:53:11.522  INFO 23485 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
-2021-06-09 02:55:16.906  INFO 23638 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Starting PersonAttributeApplication using Java 11.0.11 on Bella with PID 23638 (/home/amit/Projects/JAVA/Spring/spring boot/person-attribute/bin/main started by amit in /home/amit/Projects/JAVA/Spring/spring boot/person-attribute)
-2021-06-09 02:55:16.912  INFO 23638 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : No active profile set, falling back to default profiles: default
-2021-06-09 02:55:17.161  INFO 23638 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-06-09 02:55:17.162  INFO 23638 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-06-09 02:55:19.797  INFO 23638 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-06-09 02:55:20.040  INFO 23638 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 220 ms. Found 5 JPA repository interfaces.
-2021-06-09 02:55:22.104  INFO 23638 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-06-09 02:55:22.125  INFO 23638 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-06-09 02:55:22.126  INFO 23638 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
-2021-06-09 02:55:22.326  INFO 23638 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-06-09 02:55:22.326  INFO 23638 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5161 ms
-2021-06-09 02:55:22.910  INFO 23638 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-06-09 02:55:23.020  INFO 23638 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
-2021-06-09 02:55:23.357  INFO 23638 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-06-09 02:55:23.658  INFO 23638 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-06-09 02:55:23.673  WARN 23638 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2021-06-09 02:55:24.697  INFO 23638 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-06-09 02:55:24.766  INFO 23638 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
-2021-06-09 02:55:26.922  INFO 23638 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-06-09 02:55:26.942  INFO 23638 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-06-09 02:55:28.681  WARN 23638 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-06-09 02:55:29.563  INFO 23638 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-06-09 02:55:29.825  INFO 23638 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2021-06-09 02:55:29.918  INFO 23638 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Started PersonAttributeApplication in 14.232 seconds (JVM running for 15.576)
-2021-06-09 02:55:29.963  INFO 23638 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
-2021-06-09 02:55:29.993  INFO 23638 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
-2021-06-09 02:55:56.045  INFO 23638 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-06-09 02:55:56.048  INFO 23638 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-06-09 02:55:56.051  INFO 23638 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2021-06-09 03:03:49.096  INFO 24145 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Starting PersonAttributeApplication using Java 11.0.11 on Bella with PID 24145 (/home/amit/Projects/JAVA/Spring/spring boot/person-attribute/bin/main started by amit in /home/amit/Projects/JAVA/Spring/spring boot/person-attribute)
-2021-06-09 03:03:49.101  INFO 24145 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : No active profile set, falling back to default profiles: default
-2021-06-09 03:03:49.323  INFO 24145 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-06-09 03:03:49.325  INFO 24145 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-06-09 03:03:51.223  INFO 24145 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-06-09 03:03:51.462  INFO 24145 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 218 ms. Found 5 JPA repository interfaces.
-2021-06-09 03:03:53.484  INFO 24145 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-06-09 03:03:53.509  INFO 24145 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-06-09 03:03:53.510  INFO 24145 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
-2021-06-09 03:03:53.780  INFO 24145 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-06-09 03:03:53.780  INFO 24145 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4453 ms
-2021-06-09 03:03:54.333  INFO 24145 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-06-09 03:03:54.545  INFO 24145 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
-2021-06-09 03:03:54.954  INFO 24145 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-06-09 03:03:55.447  INFO 24145 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-06-09 03:03:55.474  WARN 24145 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2021-06-09 03:03:57.759  INFO 24145 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-06-09 03:03:57.861  INFO 24145 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
-2021-06-09 03:04:00.044  INFO 24145 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-06-09 03:04:00.065  INFO 24145 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-06-09 03:04:02.255  WARN 24145 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-06-09 03:04:03.618  INFO 24145 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-06-09 03:04:03.875  INFO 24145 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2021-06-09 03:04:03.941  INFO 24145 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Started PersonAttributeApplication in 15.857 seconds (JVM running for 17.333)
-2021-06-09 03:04:03.953  INFO 24145 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
-2021-06-09 03:04:03.970  INFO 24145 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
-2021-06-09 03:14:51.559  INFO 24145 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-06-09 03:14:51.561  INFO 24145 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-06-09 03:14:51.565  INFO 24145 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2021-06-09 03:19:13.970  INFO 25149 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Starting PersonAttributeApplication using Java 11.0.11 on Bella with PID 25149 (/home/amit/Projects/JAVA/Spring/spring boot/person-attribute/bin/main started by amit in /home/amit/Projects/JAVA/Spring/spring boot/person-attribute)
-2021-06-09 03:19:14.003  INFO 25149 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : No active profile set, falling back to default profiles: default
-2021-06-09 03:19:14.336  INFO 25149 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-06-09 03:19:14.337  INFO 25149 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-06-09 03:19:16.997  INFO 25149 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-06-09 03:19:17.161  INFO 25149 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 140 ms. Found 5 JPA repository interfaces.
-2021-06-09 03:19:19.197  INFO 25149 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-06-09 03:19:19.226  INFO 25149 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-06-09 03:19:19.229  INFO 25149 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
-2021-06-09 03:19:19.523  INFO 25149 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-06-09 03:19:19.524  INFO 25149 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5185 ms
-2021-06-09 03:19:20.083  INFO 25149 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-06-09 03:19:20.222  INFO 25149 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
-2021-06-09 03:19:20.771  INFO 25149 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-06-09 03:19:21.161  INFO 25149 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-06-09 03:19:21.181  WARN 25149 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2021-06-09 03:19:22.077  INFO 25149 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-06-09 03:19:22.185  INFO 25149 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
-2021-06-09 03:19:24.056  INFO 25149 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-06-09 03:19:24.072  INFO 25149 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-06-09 03:19:25.585  WARN 25149 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-06-09 03:19:26.985  INFO 25149 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-06-09 03:19:27.148  INFO 25149 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2021-06-09 03:19:27.198  INFO 25149 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Started PersonAttributeApplication in 15.174 seconds (JVM running for 16.785)
-2021-06-09 03:19:27.203  INFO 25149 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
-2021-06-09 03:19:27.217  INFO 25149 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
-2021-06-09 03:19:33.395  INFO 25149 --- [Thread-6] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
-2021-06-09 03:19:33.474  INFO 25149 --- [Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-06-09 03:19:33.490  INFO 25149 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-06-09 03:19:33.554  INFO 25149 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-06-09 03:19:33.865  INFO 25149 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Starting PersonAttributeApplication using Java 11.0.11 on Bella with PID 25149 (/home/amit/Projects/JAVA/Spring/spring boot/person-attribute/bin/main started by amit in /home/amit/Projects/JAVA/Spring/spring boot/person-attribute)
-2021-06-09 03:19:33.868  INFO 25149 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : No active profile set, falling back to default profiles: default
-2021-06-09 03:19:35.018  INFO 25149 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-06-09 03:19:35.152  INFO 25149 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 117 ms. Found 5 JPA repository interfaces.
-2021-06-09 03:19:35.856  INFO 25149 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-06-09 03:19:35.860  INFO 25149 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-06-09 03:19:35.861  INFO 25149 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
-2021-06-09 03:19:35.896  INFO 25149 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-06-09 03:19:35.897  INFO 25149 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2013 ms
-2021-06-09 03:19:36.086  INFO 25149 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-06-09 03:19:36.097  INFO 25149 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2021-06-09 03:19:36.097  WARN 25149 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2021-06-09 03:19:36.307  INFO 25149 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2021-06-09 03:19:36.308  INFO 25149 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
-2021-06-09 03:19:36.629  INFO 25149 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-06-09 03:19:36.630  INFO 25149 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-06-09 03:19:37.104  WARN 25149 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-06-09 03:19:37.481  INFO 25149 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-06-09 03:19:37.513  INFO 25149 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2021-06-09 03:19:37.528  INFO 25149 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Started PersonAttributeApplication in 3.799 seconds (JVM running for 27.115)
-2021-06-09 03:19:37.530  INFO 25149 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
-2021-06-09 03:19:37.535  INFO 25149 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2021-06-09 03:19:37.537  INFO 25149 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
-2021-06-09 03:19:38.899  INFO 25149 --- [Thread-9] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
-2021-06-09 03:19:38.925  INFO 25149 --- [Thread-9] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-06-09 03:19:38.928  INFO 25149 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
-2021-06-09 03:19:38.953  INFO 25149 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
-2021-06-09 03:19:39.195  INFO 25149 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Starting PersonAttributeApplication using Java 11.0.11 on Bella with PID 25149 (/home/amit/Projects/JAVA/Spring/spring boot/person-attribute/bin/main started by amit in /home/amit/Projects/JAVA/Spring/spring boot/person-attribute)
-2021-06-09 03:19:39.195  INFO 25149 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : No active profile set, falling back to default profiles: default
-2021-06-09 03:19:39.695  INFO 25149 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-06-09 03:19:39.722  INFO 25149 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 5 JPA repository interfaces.
-2021-06-09 03:19:39.991  INFO 25149 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-06-09 03:19:39.994  INFO 25149 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-06-09 03:19:39.995  INFO 25149 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
-2021-06-09 03:19:40.024  INFO 25149 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-06-09 03:19:40.026  INFO 25149 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 818 ms
-2021-06-09 03:19:40.169  INFO 25149 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-06-09 03:19:40.182  INFO 25149 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
-2021-06-09 03:19:40.183  WARN 25149 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2021-06-09 03:19:40.261  INFO 25149 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
-2021-06-09 03:19:40.263  INFO 25149 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
-2021-06-09 03:19:40.519  INFO 25149 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-06-09 03:19:40.523  INFO 25149 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-06-09 03:19:40.942  WARN 25149 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-06-09 03:19:41.218  INFO 25149 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-06-09 03:19:41.252  INFO 25149 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2021-06-09 03:19:41.262  INFO 25149 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Started PersonAttributeApplication in 2.191 seconds (JVM running for 30.85)
-2021-06-09 03:19:41.265  INFO 25149 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
-2021-06-09 03:19:41.268  INFO 25149 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2021-06-09 03:19:41.269  INFO 25149 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
-2021-06-09 03:19:55.334  INFO 25149 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-06-09 03:19:55.336  INFO 25149 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-06-09 03:19:55.340  INFO 25149 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2021-06-09 03:19:59.827  INFO 25149 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : no entities detected
-2021-06-09 03:22:33.924  INFO 25149 --- [Thread-14] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
-2021-06-09 03:22:33.966  INFO 25149 --- [Thread-14] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-06-09 03:22:33.971  INFO 25149 --- [Thread-14] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
-2021-06-09 03:22:34.008  INFO 25149 --- [Thread-14] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
-2021-06-09 03:22:34.261  INFO 25149 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Starting PersonAttributeApplication using Java 11.0.11 on Bella with PID 25149 (/home/amit/Projects/JAVA/Spring/spring boot/person-attribute/bin/main started by amit in /home/amit/Projects/JAVA/Spring/spring boot/person-attribute)
-2021-06-09 03:22:34.262  INFO 25149 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : No active profile set, falling back to default profiles: default
-2021-06-09 03:22:34.634  INFO 25149 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-06-09 03:22:34.671  INFO 25149 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 5 JPA repository interfaces.
-2021-06-09 03:22:34.970  INFO 25149 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-06-09 03:22:34.973  INFO 25149 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-06-09 03:22:34.974  INFO 25149 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
-2021-06-09 03:22:35.007  INFO 25149 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-06-09 03:22:35.007  INFO 25149 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 735 ms
-2021-06-09 03:22:35.236  INFO 25149 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-06-09 03:22:35.249  INFO 25149 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
-2021-06-09 03:22:35.251  WARN 25149 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2021-06-09 03:22:35.409  INFO 25149 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
-2021-06-09 03:22:35.410  INFO 25149 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
-2021-06-09 03:22:35.715  INFO 25149 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-06-09 03:22:35.724  INFO 25149 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-06-09 03:22:36.180  WARN 25149 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-06-09 03:22:36.413  INFO 25149 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-06-09 03:22:36.448  INFO 25149 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2021-06-09 03:22:36.463  INFO 25149 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Started PersonAttributeApplication in 2.298 seconds (JVM running for 206.051)
-2021-06-09 03:22:36.465  INFO 25149 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
-2021-06-09 03:22:36.474  INFO 25149 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2021-06-09 03:22:36.475  INFO 25149 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
-2021-06-09 03:22:43.901  INFO 25149 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-06-09 03:22:43.904  INFO 25149 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-06-09 03:22:43.908  INFO 25149 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2021-06-09 03:22:45.340  INFO 25149 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : Entity detected android with score 0.827449
+2021-06-14 00:00:16.151  INFO 15167 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Starting PersonAttributeApplication using Java 11.0.11 on Bella with PID 15167 (/home/amit/Projects/JAVA/Spring/spring boot/person-attribute/bin/main started by amit in /home/amit/Projects/JAVA/Spring/spring boot/person-attribute)
+2021-06-14 00:00:16.302  INFO 15167 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : No active profile set, falling back to default profiles: default
+2021-06-14 00:00:16.739  INFO 15167 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-06-14 00:00:16.749  INFO 15167 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-06-14 00:00:19.219  INFO 15167 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-14 00:00:19.482  INFO 15167 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 237 ms. Found 5 JPA repository interfaces.
+2021-06-14 00:00:22.012  INFO 15167 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-06-14 00:00:22.047  INFO 15167 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-14 00:00:22.052  INFO 15167 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-14 00:00:22.404  INFO 15167 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-14 00:00:22.409  INFO 15167 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5653 ms
+2021-06-14 00:00:23.189  INFO 15167 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-14 00:00:23.325  INFO 15167 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-14 00:00:24.006  INFO 15167 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-14 00:00:24.303  INFO 15167 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-14 00:00:24.317  WARN 15167 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-06-14 00:00:25.520  INFO 15167 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-14 00:00:25.586  INFO 15167 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2021-06-14 00:00:27.517  INFO 15167 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-14 00:00:27.534  INFO 15167 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-14 00:00:28.696  WARN 15167 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-14 00:00:29.576  INFO 15167 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-06-14 00:00:29.736  INFO 15167 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-06-14 00:00:29.780  INFO 15167 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Started PersonAttributeApplication in 14.858 seconds (JVM running for 16.502)
+2021-06-14 00:00:29.788  INFO 15167 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-14 00:00:29.797  INFO 15167 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-14 00:23:03.944  INFO 15167 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-14 00:23:03.948  INFO 15167 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-14 00:23:03.954  INFO 15167 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2021-06-14 00:23:06.922  INFO 15167 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : neutral score: 0.44195798
+2021-06-14 00:23:06.923  INFO 15167 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : negative score: 0.101444416
+2021-06-14 00:23:06.924  INFO 15167 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : positive score: 0.04518611
+2021-06-14 00:23:06.926  INFO 15167 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : mixed score: 0.41141143
+2021-06-14 00:23:07.249  INFO 15167 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : Entity detected both with score 0.882271
+2021-06-14 00:23:07.250  INFO 15167 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : Entity detected indian with score 0.649199
+2021-06-14 00:23:07.251  INFO 15167 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : Entity detected faangpath with score 0.854270
+2021-06-14 00:23:07.574  INFO 15167 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:your college tier with confidence:0.999781
+2021-06-14 00:23:07.577  INFO 15167 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:talent with confidence:0.996645
+2021-06-14 00:23:07.580  INFO 15167 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:the reason with confidence:0.999999
+2021-06-14 00:23:07.581  INFO 15167 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:most cases with confidence:0.999963
+2021-06-14 00:23:07.582  INFO 15167 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:the resume with confidence:0.999713
+2021-06-14 00:23:07.583  INFO 15167 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:your work with confidence:0.999989
+2021-06-14 00:23:07.585  INFO 15167 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:reviewing with confidence:0.642009
+2021-06-14 00:23:07.587  INFO 15167 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:resumes with confidence:0.815847
+2021-06-14 00:23:07.588  INFO 15167 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:both indian with confidence:0.999809
+2021-06-14 00:23:07.589  INFO 15167 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:international applicants with confidence:0.999997
+2021-06-14 00:23:07.592  INFO 15167 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:faangpath i with confidence:0.996411
+2021-06-14 00:23:07.594  INFO 15167 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:a resume with confidence:0.999999
+2021-06-14 00:23:07.595  INFO 15167 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:a lot with confidence:1.000000
+2021-06-14 00:23:07.596  INFO 15167 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:doors with confidence:0.999999
+2021-06-14 00:43:17.086  INFO 18032 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Starting PersonAttributeApplication using Java 11.0.11 on Bella with PID 18032 (/home/amit/Projects/JAVA/Spring/spring boot/person-attribute/bin/main started by amit in /home/amit/Projects/JAVA/Spring/spring boot/person-attribute)
+2021-06-14 00:43:17.095  INFO 18032 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : No active profile set, falling back to default profiles: default
+2021-06-14 00:43:17.284  INFO 18032 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-06-14 00:43:17.284  INFO 18032 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-06-14 00:43:19.193  INFO 18032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-14 00:43:19.360  INFO 18032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 147 ms. Found 5 JPA repository interfaces.
+2021-06-14 00:43:21.194  INFO 18032 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-06-14 00:43:21.225  INFO 18032 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-14 00:43:21.228  INFO 18032 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-14 00:43:21.508  INFO 18032 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-14 00:43:21.510  INFO 18032 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4219 ms
+2021-06-14 00:43:22.071  INFO 18032 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-14 00:43:22.162  INFO 18032 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-14 00:43:22.512  INFO 18032 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-14 00:43:22.802  INFO 18032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-14 00:43:22.822  WARN 18032 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-06-14 00:43:23.805  INFO 18032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-14 00:43:23.878  INFO 18032 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2021-06-14 00:43:25.684  INFO 18032 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-14 00:43:25.705  INFO 18032 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-14 00:43:27.091  WARN 18032 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-14 00:43:28.061  INFO 18032 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-06-14 00:43:28.286  INFO 18032 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-06-14 00:43:28.316  INFO 18032 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Started PersonAttributeApplication in 12.331 seconds (JVM running for 13.99)
+2021-06-14 00:43:28.326  INFO 18032 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-14 00:43:28.336  INFO 18032 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-14 00:46:44.305  INFO 18032 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-14 00:46:44.307  INFO 18032 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-14 00:46:44.312  INFO 18032 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2021-06-14 00:46:46.881  INFO 18032 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : neutral score: 0.7314283
+2021-06-14 00:46:46.882  INFO 18032 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : negative score: 2.831264E-4
+2021-06-14 00:46:46.883  INFO 18032 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : positive score: 0.26810205
+2021-06-14 00:46:46.885  INFO 18032 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : mixed score: 1.8652363E-4
+2021-06-14 00:46:47.211  INFO 18032 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : Entity detected innings with score 0.556388
+2021-06-14 00:46:47.212  INFO 18032 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : Entity detected google with score 0.516095
+2021-06-14 00:46:47.213  INFO 18032 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : Entity detected cloud with score 0.760190
+2021-06-14 00:46:47.215  INFO 18032 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : Entity detected google cloud with score 0.624762
+2021-06-14 00:46:47.216  INFO 18032 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : Entity detected google with score 0.951238
+2021-06-14 00:46:47.538  INFO 18032 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:next innings with confidence:0.999997
+2021-06-14 00:46:47.539  INFO 18032 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:a unique program with confidence:1.000000
+2021-06-14 00:46:47.540  INFO 18032 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:an opportunity with confidence:1.000000
+2021-06-14 00:46:47.541  INFO 18032 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:women with confidence:1.000000
+2021-06-14 00:46:47.542  INFO 18032 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:a break with confidence:1.000000
+2021-06-14 00:46:47.544  INFO 18032 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:the workforce with confidence:1.000000
+2021-06-14 00:46:47.545  INFO 18032 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:the workforce with confidence:1.000000
+2021-06-14 00:46:47.546  INFO 18032 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:the guidance with confidence:1.000000
+2021-06-14 00:46:47.550  INFO 18032 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:experienced leaders with confidence:0.999999
+2021-06-14 00:46:47.551  INFO 18032 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:selected candidates with confidence:0.999999
+2021-06-14 00:46:47.552  INFO 18032 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:core technologies with confidence:1.000000
+2021-06-14 00:46:47.553  INFO 18032 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:google cloud with confidence:1.000000
+2021-06-14 00:46:47.554  INFO 18032 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:a chance with confidence:1.000000
+2021-06-14 00:46:47.555  INFO 18032 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:the various services with confidence:1.000000
+2021-06-14 00:46:47.557  INFO 18032 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:google cloud with confidence:0.999999
+2021-06-14 00:46:47.558  INFO 18032 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:the experts with confidence:1.000000
+2021-06-14 00:46:47.559  INFO 18032 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:the area with confidence:1.000000
+2021-06-14 00:46:47.564  INFO 18032 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:the product development with confidence:1.000000
+2021-06-14 00:46:47.565  INFO 18032 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:google with confidence:0.999981
+2021-06-14 00:49:39.758  INFO 18032 --- [http-nio-8080-exec-5] c.s.p.personattribute.util.AppLogger     : neutral score: 0.7314283
+2021-06-14 00:49:39.759  INFO 18032 --- [http-nio-8080-exec-5] c.s.p.personattribute.util.AppLogger     : negative score: 2.831264E-4
+2021-06-14 00:49:39.761  INFO 18032 --- [http-nio-8080-exec-5] c.s.p.personattribute.util.AppLogger     : positive score: 0.26810205
+2021-06-14 00:49:39.762  INFO 18032 --- [http-nio-8080-exec-5] c.s.p.personattribute.util.AppLogger     : mixed score: 1.8652363E-4
+2021-06-14 00:49:40.062  INFO 18032 --- [http-nio-8080-exec-5] c.s.p.personattribute.util.AppLogger     : Entity detected innings with score 0.556388
+2021-06-14 00:49:40.064  INFO 18032 --- [http-nio-8080-exec-5] c.s.p.personattribute.util.AppLogger     : Entity detected google with score 0.516095
+2021-06-14 00:49:40.065  INFO 18032 --- [http-nio-8080-exec-5] c.s.p.personattribute.util.AppLogger     : Entity detected cloud with score 0.760190
+2021-06-14 00:49:40.067  INFO 18032 --- [http-nio-8080-exec-5] c.s.p.personattribute.util.AppLogger     : Entity detected google cloud with score 0.624762
+2021-06-14 00:49:40.071  INFO 18032 --- [http-nio-8080-exec-5] c.s.p.personattribute.util.AppLogger     : Entity detected google with score 0.951238
+2021-06-14 00:49:40.376  INFO 18032 --- [http-nio-8080-exec-5] c.s.p.personattribute.util.AppLogger     : detected key phrase:next innings with confidence:0.999997
+2021-06-14 00:49:40.377  INFO 18032 --- [http-nio-8080-exec-5] c.s.p.personattribute.util.AppLogger     : detected key phrase:a unique program with confidence:1.000000
+2021-06-14 00:49:40.379  INFO 18032 --- [http-nio-8080-exec-5] c.s.p.personattribute.util.AppLogger     : detected key phrase:an opportunity with confidence:1.000000
+2021-06-14 00:49:40.380  INFO 18032 --- [http-nio-8080-exec-5] c.s.p.personattribute.util.AppLogger     : detected key phrase:women with confidence:1.000000
+2021-06-14 00:49:40.380  INFO 18032 --- [http-nio-8080-exec-5] c.s.p.personattribute.util.AppLogger     : detected key phrase:a break with confidence:1.000000
+2021-06-14 00:49:40.381  INFO 18032 --- [http-nio-8080-exec-5] c.s.p.personattribute.util.AppLogger     : detected key phrase:the workforce with confidence:1.000000
+2021-06-14 00:49:40.381  INFO 18032 --- [http-nio-8080-exec-5] c.s.p.personattribute.util.AppLogger     : detected key phrase:the workforce with confidence:1.000000
+2021-06-14 00:49:40.383  INFO 18032 --- [http-nio-8080-exec-5] c.s.p.personattribute.util.AppLogger     : detected key phrase:the guidance with confidence:1.000000
+2021-06-14 00:49:40.388  INFO 18032 --- [http-nio-8080-exec-5] c.s.p.personattribute.util.AppLogger     : detected key phrase:experienced leaders with confidence:0.999999
+2021-06-14 00:49:40.390  INFO 18032 --- [http-nio-8080-exec-5] c.s.p.personattribute.util.AppLogger     : detected key phrase:selected candidates with confidence:0.999999
+2021-06-14 00:49:40.393  INFO 18032 --- [http-nio-8080-exec-5] c.s.p.personattribute.util.AppLogger     : detected key phrase:core technologies with confidence:1.000000
+2021-06-14 00:49:40.396  INFO 18032 --- [http-nio-8080-exec-5] c.s.p.personattribute.util.AppLogger     : detected key phrase:google cloud with confidence:1.000000
+2021-06-14 00:49:40.398  INFO 18032 --- [http-nio-8080-exec-5] c.s.p.personattribute.util.AppLogger     : detected key phrase:a chance with confidence:1.000000
+2021-06-14 00:49:40.398  INFO 18032 --- [http-nio-8080-exec-5] c.s.p.personattribute.util.AppLogger     : detected key phrase:the various services with confidence:1.000000
+2021-06-14 00:49:40.399  INFO 18032 --- [http-nio-8080-exec-5] c.s.p.personattribute.util.AppLogger     : detected key phrase:google cloud with confidence:0.999999
+2021-06-14 00:49:40.405  INFO 18032 --- [http-nio-8080-exec-5] c.s.p.personattribute.util.AppLogger     : detected key phrase:the experts with confidence:1.000000
+2021-06-14 00:49:40.405  INFO 18032 --- [http-nio-8080-exec-5] c.s.p.personattribute.util.AppLogger     : detected key phrase:the area with confidence:1.000000
+2021-06-14 00:49:40.406  INFO 18032 --- [http-nio-8080-exec-5] c.s.p.personattribute.util.AppLogger     : detected key phrase:the product development with confidence:1.000000
+2021-06-14 00:49:40.407  INFO 18032 --- [http-nio-8080-exec-5] c.s.p.personattribute.util.AppLogger     : detected key phrase:google with confidence:0.999981
+2021-06-14 00:58:07.863  INFO 18032 --- [Thread-6] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-06-14 00:58:07.980  INFO 18032 --- [Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-14 00:58:08.003  INFO 18032 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-06-14 00:58:08.035  INFO 18032 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-06-14 00:58:08.341  INFO 18032 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Starting PersonAttributeApplication using Java 11.0.11 on Bella with PID 18032 (/home/amit/Projects/JAVA/Spring/spring boot/person-attribute/bin/main started by amit in /home/amit/Projects/JAVA/Spring/spring boot/person-attribute)
+2021-06-14 00:58:08.344  INFO 18032 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : No active profile set, falling back to default profiles: default
+2021-06-14 00:58:09.083  INFO 18032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-14 00:58:09.170  INFO 18032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 83 ms. Found 5 JPA repository interfaces.
+2021-06-14 00:58:09.640  INFO 18032 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-06-14 00:58:09.650  INFO 18032 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-14 00:58:09.652  INFO 18032 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-14 00:58:09.701  INFO 18032 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-14 00:58:09.713  INFO 18032 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1345 ms
+2021-06-14 00:58:09.880  INFO 18032 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-14 00:58:09.889  INFO 18032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2021-06-14 00:58:09.890  WARN 18032 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-06-14 00:58:09.961  INFO 18032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2021-06-14 00:58:09.962  INFO 18032 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2021-06-14 00:58:10.289  INFO 18032 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-14 00:58:10.290  INFO 18032 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-14 00:58:10.671  WARN 18032 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-14 00:58:10.947  INFO 18032 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-06-14 00:58:11.018  INFO 18032 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-06-14 00:58:11.032  INFO 18032 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Started PersonAttributeApplication in 2.825 seconds (JVM running for 896.706)
+2021-06-14 00:58:11.035  INFO 18032 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-14 00:58:11.040  INFO 18032 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-06-14 00:58:11.043  INFO 18032 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC

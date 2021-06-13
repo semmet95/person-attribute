@@ -1,10 +1,13 @@
 package com.semmet.personattribute.personattribute.service;
 
+import java.util.List;
 import java.util.Map;
 
 import com.semmet.personattribute.personattribute.model.Entities;
 import com.semmet.personattribute.personattribute.model.KeyPhrases;
 import com.semmet.personattribute.personattribute.model.UserEntityMappings;
+import com.semmet.personattribute.personattribute.model.UserKeyPhraseMappings;
+import com.semmet.personattribute.personattribute.repository.UserEntityMappingsRepository;
 import com.semmet.personattribute.personattribute.util.AWSComprehendUtil;
 import com.semmet.personattribute.personattribute.util.AppLogger;
 
@@ -42,22 +45,18 @@ public class TextAnalysisService {
     }
 
 
-    public void analyzeText(String userId, String text, String langCode) {
+    public void analyzeText(String text, String langCode) {
         
         this.setSentimentMap(AWSComprehendUtil.detectSentiment(text, langCode));
         this.setEntityScoreMap(AWSComprehendUtil.detectAllEntities(text, langCode));
         this.setKeyPhraseConfidenceMap(AWSComprehendUtil.detectAllKeyPhrases(text, langCode));
 
-        if(null == sentimentMap) {
+        if(null == this.sentimentMap) {
             AppLogger.LOGGER.error(String.format("received null sentiments for the text::%s", text));
-        } else if(null == entityScoreMap) {
+        } else if(null == this.entityScoreMap) {
             AppLogger.LOGGER.error(String.format("received null entities for the text::%s", text));
-        } else if(null == keyPhraseConfidenceMap) {
+        } else if(null == this.keyPhraseConfidenceMap) {
             AppLogger.LOGGER.error(String.format("received null key phrases for the text::%s", text));
-        } else {
-            
-            //Entities[] allEntities = getEntitiesObjects(entityScoreMap);
-            //KeyPhrases[] allKeyPhrases = getKeyPhrasesObjects(keyPhraseConfidenceMap);
         }
     }
 
@@ -93,7 +92,7 @@ public class TextAnalysisService {
         return allKeyPhrases;
     }
 
-    public UserEntityMappings[] getUserEntityMappingsObjects(long userId, Map<String, Long> entityIdMapping, Map<String, Long> entityScoreMap, Map<String, Float> sentimentMap) {
+    public UserEntityMappings[] getUserEntityMappingsObjects(long userId, Map<String, Long> entityIdMapping) {
         
         UserEntityMappings[] allUserEntityMappings = new UserEntityMappings[entityScoreMap.size()];
         var index = 0;
@@ -103,18 +102,39 @@ public class TextAnalysisService {
             var tempueMappings = new UserEntityMappings();
             tempueMappings.setEntityId(entityIdMapping.get(entity));
             tempueMappings.setUserId(userId);
-
-            //if()
-                tempueMappings.setFrequency(1);
-                tempueMappings.setSentimentMixed(sentimentMap.get("mixed"));
-                tempueMappings.setSentimentNegative(sentimentMap.get("negative"));
-                tempueMappings.setSentimentNeutral(sentimentMap.get("neutral"));
-                tempueMappings.setSentimentPositive(sentimentMap.get("positive"));
-                tempueMappings.setWeight(entityScoreMap.get(entity));
+            tempueMappings.setFrequency(1);
+            tempueMappings.setSentimentMixed(sentimentMap.get("mixed"));
+            tempueMappings.setSentimentNegative(sentimentMap.get("negative"));
+            tempueMappings.setSentimentNeutral(sentimentMap.get("neutral"));
+            tempueMappings.setSentimentPositive(sentimentMap.get("positive"));
+            tempueMappings.setWeight(entityScoreMap.get(entity));
 
             allUserEntityMappings[index++] = tempueMappings;
         }
 
         return allUserEntityMappings;
+    }
+
+    public UserKeyPhraseMappings[] getUserKeyPhraseMappingsObjects(long userId, Map<String, Long> keyPhraseIdMapping) {
+        
+        UserKeyPhraseMappings[] allUserKeyPhraseMappings = new UserKeyPhraseMappings[keyPhraseConfidenceMap.size()];
+        var index = 0;
+
+        for(var keyPhrase: keyPhraseConfidenceMap.keySet()) {
+            
+            var tempukpMappings = new UserKeyPhraseMappings();
+            tempukpMappings.setFrequency(1);
+            tempukpMappings.setKeyPhraseId(keyPhraseIdMapping.get(keyPhrase));
+            tempukpMappings.setUserId(userId);
+            tempukpMappings.setWeight(keyPhraseConfidenceMap.get(keyPhrase));
+            tempukpMappings.setSentimentMixed(sentimentMap.get("mixed"));
+            tempukpMappings.setSentimentNegative(sentimentMap.get("negative"));
+            tempukpMappings.setSentimentNeutral(sentimentMap.get("neutral"));
+            tempukpMappings.setSentimentPositive(sentimentMap.get("positive"));
+
+            allUserKeyPhraseMappings[index++] = tempukpMappings;
+        }
+
+        return allUserKeyPhraseMappings;
     }
 }
