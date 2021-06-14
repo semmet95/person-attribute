@@ -1,15 +1,14 @@
 package com.semmet.personattribute.personattribute.service;
 
-import java.util.List;
 import java.util.Map;
 
 import com.semmet.personattribute.personattribute.model.Entities;
 import com.semmet.personattribute.personattribute.model.KeyPhrases;
 import com.semmet.personattribute.personattribute.model.UserEntityMappings;
 import com.semmet.personattribute.personattribute.model.UserKeyPhraseMappings;
-import com.semmet.personattribute.personattribute.repository.UserEntityMappingsRepository;
 import com.semmet.personattribute.personattribute.util.AWSComprehendUtil;
 import com.semmet.personattribute.personattribute.util.AppLogger;
+import com.semmet.personattribute.personattribute.util.AppUtils;
 
 import org.springframework.stereotype.Service;
 
@@ -45,7 +44,7 @@ public class TextAnalysisService {
     }
 
 
-    public void analyzeText(String text, String langCode) {
+    public Map<String, Float> analyzeText(String text, String langCode) {
         
         this.setSentimentMap(AWSComprehendUtil.detectSentiment(text, langCode));
         this.setEntityScoreMap(AWSComprehendUtil.detectAllEntities(text, langCode));
@@ -58,6 +57,8 @@ public class TextAnalysisService {
         } else if(null == this.keyPhraseConfidenceMap) {
             AppLogger.LOGGER.error(String.format("received null key phrases for the text::%s", text));
         }
+
+        return this.sentimentMap;
     }
 
     public Entities[] getEntitiesObjects() {
@@ -103,11 +104,11 @@ public class TextAnalysisService {
             tempueMappings.setEntityId(entityIdMapping.get(entity));
             tempueMappings.setUserId(userId);
             tempueMappings.setFrequency(1);
-            tempueMappings.setSentimentMixed(sentimentMap.get("mixed"));
-            tempueMappings.setSentimentNegative(sentimentMap.get("negative"));
-            tempueMappings.setSentimentNeutral(sentimentMap.get("neutral"));
-            tempueMappings.setSentimentPositive(sentimentMap.get("positive"));
-            tempueMappings.setWeight(entityScoreMap.get(entity));
+            tempueMappings.setSentimentMixed(AppUtils.tanH(0, 2 * sentimentMap.get("mixed")));
+            tempueMappings.setSentimentNegative(AppUtils.tanH(0, 2 * sentimentMap.get("negative")));
+            tempueMappings.setSentimentNeutral(AppUtils.tanH(0, 2 * sentimentMap.get("neutral")));
+            tempueMappings.setSentimentPositive(AppUtils.tanH(0, 2 * sentimentMap.get("positive")));
+            tempueMappings.setWeight(AppUtils.tanH(0, 2 * entityScoreMap.get(entity)));
 
             allUserEntityMappings[index++] = tempueMappings;
         }
@@ -126,11 +127,11 @@ public class TextAnalysisService {
             tempukpMappings.setFrequency(1);
             tempukpMappings.setKeyPhraseId(keyPhraseIdMapping.get(keyPhrase));
             tempukpMappings.setUserId(userId);
-            tempukpMappings.setWeight(keyPhraseConfidenceMap.get(keyPhrase));
-            tempukpMappings.setSentimentMixed(sentimentMap.get("mixed"));
-            tempukpMappings.setSentimentNegative(sentimentMap.get("negative"));
-            tempukpMappings.setSentimentNeutral(sentimentMap.get("neutral"));
-            tempukpMappings.setSentimentPositive(sentimentMap.get("positive"));
+            tempukpMappings.setWeight(AppUtils.tanH(0, 2 * keyPhraseConfidenceMap.get(keyPhrase)));
+            tempukpMappings.setSentimentMixed(AppUtils.tanH(0, 2 * sentimentMap.get("mixed")));
+            tempukpMappings.setSentimentNegative(AppUtils.tanH(0, 2 * sentimentMap.get("negative")));
+            tempukpMappings.setSentimentNeutral(AppUtils.tanH(0, 2 * sentimentMap.get("neutral")));
+            tempukpMappings.setSentimentPositive(AppUtils.tanH(0, 2 * sentimentMap.get("positive")));
 
             allUserKeyPhraseMappings[index++] = tempukpMappings;
         }

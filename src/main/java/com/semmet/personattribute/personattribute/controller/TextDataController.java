@@ -7,11 +7,13 @@ import java.util.Map;
 import com.semmet.personattribute.personattribute.model.Entities;
 import com.semmet.personattribute.personattribute.model.KeyPhrases;
 import com.semmet.personattribute.personattribute.model.UserEntityMappings;
+import com.semmet.personattribute.personattribute.model.UserKeyPhraseMappings;
 import com.semmet.personattribute.personattribute.repository.EntitiesRepository;
 import com.semmet.personattribute.personattribute.repository.KeyPhrasesRepository;
 import com.semmet.personattribute.personattribute.repository.UserEntityMappingsRepository;
 import com.semmet.personattribute.personattribute.repository.UserKeyPhrasesMappingsRepository;
 import com.semmet.personattribute.personattribute.service.TextAnalysisService;
+import com.semmet.personattribute.personattribute.util.AppUtils;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,7 +42,7 @@ public class TextDataController {
         var userId = Long.parseLong(body.get("userId"));
 
         // use Comprehend to extract all the data first
-        textAnalysisService.analyzeText(textData, "en");
+        Map<String, Float> sentimentMap = textAnalysisService.analyzeText(textData, "en");
         Entities[] allEntities = textAnalysisService.getEntitiesObjects();
         KeyPhrases[] allKeyPhrases = textAnalysisService.getKeyPhrasesObjects();
 
@@ -80,8 +82,40 @@ public class TextDataController {
 
             if(existingueMappings.isEmpty()) {
                 // handle the case with new UEmappings
+                userEntityMappingsRepository.save(ueMapping);
             } else {
                 //update the existing ueMapping
+                var tempueMappings = existingueMappings.get(0);
+                tempueMappings.setFrequency(tempueMappings.getFrequency() + 1);
+                tempueMappings.setSentimentMixed(AppUtils.tanH(tempueMappings.getSentimentMixed(), sentimentMap.get("mixed")));
+                tempueMappings.setSentimentNegative(AppUtils.tanH(tempueMappings.getSentimentNegative(), sentimentMap.get("negative")));
+                tempueMappings.setSentimentNeutral(AppUtils.tanH(tempueMappings.getSentimentNeutral(), sentimentMap.get("neutral")));
+                tempueMappings.setSentimentPositive(AppUtils.tanH(tempueMappings.getSentimentPositive(), sentimentMap.get("positive")));
+                tempueMappings.setWeight(AppUtils.tanH(tempueMappings.getWeight(), ueMapping.getWeight()));
+
+                userEntityMappingsRepository.save(tempueMappings);
+            }
+        }
+
+        UserKeyPhraseMappings[] allUserKeyPhraseMappings = textAnalysisService.getUserKeyPhraseMappingsObjects(userId, keyPhraseIdMapping);
+
+        for(var ukpMapping: allUserKeyPhraseMappings) {
+            List<UserKeyPhraseMappings> existingukpMappings = userEntityMappingsRepository.findByUserIdAndEntityId(userId, ueMapping.getEntityId());
+
+            if(existingueMappings.isEmpty()) {
+                // handle the case with new UEmappings
+                userEntityMappingsRepository.save(ueMapping);
+            } else {
+                //update the existing ueMapping
+                var tempueMappings = existingueMappings.get(0);
+                tempueMappings.setFrequency(tempueMappings.getFrequency() + 1);
+                tempueMappings.setSentimentMixed(AppUtils.tanH(tempueMappings.getSentimentMixed(), sentimentMap.get("mixed")));
+                tempueMappings.setSentimentNegative(AppUtils.tanH(tempueMappings.getSentimentNegative(), sentimentMap.get("negative")));
+                tempueMappings.setSentimentNeutral(AppUtils.tanH(tempueMappings.getSentimentNeutral(), sentimentMap.get("neutral")));
+                tempueMappings.setSentimentPositive(AppUtils.tanH(tempueMappings.getSentimentPositive(), sentimentMap.get("positive")));
+                tempueMappings.setWeight(AppUtils.tanH(tempueMappings.getWeight(), ueMapping.getWeight()));
+
+                userEntityMappingsRepository.save(tempueMappings);
             }
         }
     }
