@@ -81,7 +81,7 @@ public class TextDataController {
             List<UserEntityMappings> existingueMappings = userEntityMappingsRepository.findByUserIdAndEntityId(userId, ueMapping.getEntityId());
 
             if(existingueMappings.isEmpty()) {
-                // handle the case with new UEmappings
+                // handle the case with new ueMappings
                 userEntityMappingsRepository.save(ueMapping);
             } else {
                 //update the existing ueMapping
@@ -100,22 +100,22 @@ public class TextDataController {
         UserKeyPhraseMappings[] allUserKeyPhraseMappings = textAnalysisService.getUserKeyPhraseMappingsObjects(userId, keyPhraseIdMapping);
 
         for(var ukpMapping: allUserKeyPhraseMappings) {
-            List<UserKeyPhraseMappings> existingukpMappings = userEntityMappingsRepository.findByUserIdAndEntityId(userId, ueMapping.getEntityId());
+            List<UserKeyPhraseMappings> existingukpMappings = userKeyPhrasesMappingsRepository.findByUserIdAndKeyPhraseId(userId, ukpMapping.getKeyPhraseId());
 
-            if(existingueMappings.isEmpty()) {
-                // handle the case with new UEmappings
-                userEntityMappingsRepository.save(ueMapping);
+            if(existingukpMappings.isEmpty()) {
+                // handle the case with new ukpMappings
+                userKeyPhrasesMappingsRepository.save(ukpMapping);
             } else {
-                //update the existing ueMapping
-                var tempueMappings = existingueMappings.get(0);
-                tempueMappings.setFrequency(tempueMappings.getFrequency() + 1);
-                tempueMappings.setSentimentMixed(AppUtils.tanH(tempueMappings.getSentimentMixed(), sentimentMap.get("mixed")));
-                tempueMappings.setSentimentNegative(AppUtils.tanH(tempueMappings.getSentimentNegative(), sentimentMap.get("negative")));
-                tempueMappings.setSentimentNeutral(AppUtils.tanH(tempueMappings.getSentimentNeutral(), sentimentMap.get("neutral")));
-                tempueMappings.setSentimentPositive(AppUtils.tanH(tempueMappings.getSentimentPositive(), sentimentMap.get("positive")));
-                tempueMappings.setWeight(AppUtils.tanH(tempueMappings.getWeight(), ueMapping.getWeight()));
+                //update the existing ukpMapping
+                var tempukpMappings = existingukpMappings.get(0);
+                tempukpMappings.setFrequency(tempukpMappings.getFrequency() + 1);
+                tempukpMappings.setSentimentMixed(AppUtils.tanH(tempukpMappings.getSentimentMixed(), sentimentMap.get("mixed")));
+                tempukpMappings.setSentimentNegative(AppUtils.tanH(tempukpMappings.getSentimentNegative(), sentimentMap.get("negative")));
+                tempukpMappings.setSentimentNeutral(AppUtils.tanH(tempukpMappings.getSentimentNeutral(), sentimentMap.get("neutral")));
+                tempukpMappings.setSentimentPositive(AppUtils.tanH(tempukpMappings.getSentimentPositive(), sentimentMap.get("positive")));
+                tempukpMappings.setWeight(AppUtils.tanH(tempukpMappings.getWeight(), ukpMapping.getWeight()));
 
-                userEntityMappingsRepository.save(tempueMappings);
+                userKeyPhrasesMappingsRepository.save(tempukpMappings);
             }
         }
     }
