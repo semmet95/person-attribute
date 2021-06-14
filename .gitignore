@@ -38,4 +38,4 @@ out/
 
 ### logs ###
 *.log*
-person-attribute.log
+person-attribute.log*
