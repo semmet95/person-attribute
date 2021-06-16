@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class UserEntityMappings {
@@ -11,8 +13,12 @@ public class UserEntityMappings {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private long userId;
-    private long entityId;
+    @ManyToOne
+    @JoinColumn(name =  "user_id", referencedColumnName = "userId")
+    private Users user;
+    @ManyToOne
+    @JoinColumn(name =  "entity_id", referencedColumnName = "id")
+    private Entities entity;
     private float weight;
     private long frequency;
     private float sentimentNeutral;
@@ -76,19 +82,20 @@ public class UserEntityMappings {
         this.id = id;
     }
 
-    public long getUserId() {
-        return this.userId;
+    public Users getUser() {
+        return this.user;
     }
 
-    public void setUserId(long userId) {
-        this.userId = userId;
+    public void setUser(Users user) {
+        this.user = user;
     }
 
-    public long getEntityId() {
-        return this.entityId;
+    public Entities getEntity() {
+        return this.entity;
     }
 
-    public void setEntityId(long entityId) {
-        this.entityId = entityId;
+    public void setEntity(Entities entity) {
+        this.entity = entity;
     }
+
 }

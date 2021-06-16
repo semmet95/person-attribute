@@ -47,7 +47,7 @@ public class TextDataController {
         KeyPhrases[] allKeyPhrases = textAnalysisService.getKeyPhrasesObjects();
 
         // update the DB with new entities and key phrases
-        Map<String, Long> entityIdMapping = new HashMap<>();
+        //Map<String, Long> entityIdMapping = new HashMap<>();
         Map<String, Long> keyPhraseIdMapping = new HashMap<>();
 
         for(var entity: allEntities) {
@@ -56,9 +56,9 @@ public class TextDataController {
             if(existingEntity.isEmpty()) {
 
                 var savedEntity = entitiesRepository.save(entity);
-                entityIdMapping.put(entity.getEntity(), savedEntity.getId());
+                //entityIdMapping.put(entity.getEntity(), savedEntity.getId());
             } else {
-                entityIdMapping.put(entity.getEntity(), existingEntity.get(0).getId());
+                //entityIdMapping.put(entity.getEntity(), existingEntity.get(0).getId());
             }
         }
 
@@ -75,10 +75,11 @@ public class TextDataController {
         }
 
         // update the DB with new mappings
-        UserEntityMappings[] allUserEntityMappings = textAnalysisService.getUserEntityMappingsObjects(userId, entityIdMapping);
+        //UserEntityMappings[] allUserEntityMappings = textAnalysisService.getUserEntityMappingsObjects(userId, entityIdMapping);
+        UserEntityMappings[] allUserEntityMappings = textAnalysisService.getUserEntityMappingsObjects(userId);
 
         for(var ueMapping: allUserEntityMappings) {
-            List<UserEntityMappings> existingueMappings = userEntityMappingsRepository.findByUserIdAndEntityId(userId, ueMapping.getEntityId());
+            List<UserEntityMappings> existingueMappings = userEntityMappingsRepository.findByUserIdAndEntity(userId, ueMapping.getEntity().getId());
 
             if(existingueMappings.isEmpty()) {
                 // handle the case with new ueMappings

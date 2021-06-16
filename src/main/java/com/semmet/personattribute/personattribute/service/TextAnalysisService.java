@@ -2,18 +2,27 @@ package com.semmet.personattribute.personattribute.service;
 
 import java.util.Map;
 
+import com.semmet.personattribute.personattribute.exception.InvalidBodyExceptionHandler;
 import com.semmet.personattribute.personattribute.model.Entities;
 import com.semmet.personattribute.personattribute.model.KeyPhrases;
 import com.semmet.personattribute.personattribute.model.UserEntityMappings;
 import com.semmet.personattribute.personattribute.model.UserKeyPhraseMappings;
+import com.semmet.personattribute.personattribute.repository.EntitiesRepository;
+import com.semmet.personattribute.personattribute.repository.UserRepository;
 import com.semmet.personattribute.personattribute.util.AWSComprehendUtil;
 import com.semmet.personattribute.personattribute.util.AppLogger;
 import com.semmet.personattribute.personattribute.util.AppUtils;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class TextAnalysisService {
+
+    @Autowired
+    private EntitiesRepository entitiesRepository;
+    @Autowired
+    private UserRepository userRepository;
 
     private Map<String, Float> sentimentMap;
     private Map<String, Float> entityScoreMap;
@@ -93,16 +102,22 @@ public class TextAnalysisService {
         return allKeyPhrases;
     }
 
-    public UserEntityMappings[] getUserEntityMappingsObjects(long userId, Map<String, Long> entityIdMapping) {
+    public UserEntityMappings[] getUserEntityMappingsObjects(long userId) {
         
         UserEntityMappings[] allUserEntityMappings = new UserEntityMappings[entityScoreMap.size()];
         var index = 0;
 
         for(var entity: entityScoreMap.keySet()) {
 
+            var storedUser = userRepository.findByUserId(userId);
+            if(storedUser.isEmpty()) {
+                AppLogger.LOGGER.error(String.format("user with userId:%d not found", userId));
+                throw new InvalidBodyExceptionHandler();
+            }
+
             var tempueMappings = new UserEntityMappings();
-            tempueMappings.setEntityId(entityIdMapping.get(entity));
-            tempueMappings.setUserId(userId);
+            tempueMappings.setEntity(entitiesRepository.findByEntity(entity).get(0));
+            tempueMappings.setUser(storedUser.get(0));
             tempueMappings.setFrequency(1);
             tempueMappings.setSentimentMixed(AppUtils.tanH(0, 2 * sentimentMap.get("mixed")));
             tempueMappings.setSentimentNegative(AppUtils.tanH(0, 2 * sentimentMap.get("negative")));
