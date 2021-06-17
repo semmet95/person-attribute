@@ -8,6 +8,7 @@ import com.semmet.personattribute.personattribute.model.KeyPhrases;
 import com.semmet.personattribute.personattribute.model.UserEntityMappings;
 import com.semmet.personattribute.personattribute.model.UserKeyPhraseMappings;
 import com.semmet.personattribute.personattribute.repository.EntitiesRepository;
+import com.semmet.personattribute.personattribute.repository.KeyPhrasesRepository;
 import com.semmet.personattribute.personattribute.repository.UserRepository;
 import com.semmet.personattribute.personattribute.util.AWSComprehendUtil;
 import com.semmet.personattribute.personattribute.util.AppLogger;
@@ -21,6 +22,8 @@ public class TextAnalysisService {
 
     @Autowired
     private EntitiesRepository entitiesRepository;
+    @Autowired
+    private KeyPhrasesRepository keyPhrasesRepository;
     @Autowired
     private UserRepository userRepository;
 
@@ -131,17 +134,23 @@ public class TextAnalysisService {
         return allUserEntityMappings;
     }
 
-    public UserKeyPhraseMappings[] getUserKeyPhraseMappingsObjects(long userId, Map<String, Long> keyPhraseIdMapping) {
+    public UserKeyPhraseMappings[] getUserKeyPhraseMappingsObjects(long userId) {
         
         UserKeyPhraseMappings[] allUserKeyPhraseMappings = new UserKeyPhraseMappings[keyPhraseConfidenceMap.size()];
         var index = 0;
 
         for(var keyPhrase: keyPhraseConfidenceMap.keySet()) {
+
+            var storedUser = userRepository.findByUserId(userId);
+            if(storedUser.isEmpty()) {
+                AppLogger.LOGGER.error(String.format("user with userId:%d not found", userId));
+                throw new InvalidBodyExceptionHandler();
+            }
             
             var tempukpMappings = new UserKeyPhraseMappings();
             tempukpMappings.setFrequency(1);
-            tempukpMappings.setKeyPhraseId(keyPhraseIdMapping.get(keyPhrase));
-            tempukpMappings.setUserId(userId);
+            tempukpMappings.setKeyPhrase(keyPhrasesRepository.findByKeyPhrase(keyPhrase).get(0));
+            tempukpMappings.setUser(storedUser.get(0));
             tempukpMappings.setWeight(AppUtils.tanH(0, 2 * keyPhraseConfidenceMap.get(keyPhrase)));
             tempukpMappings.setSentimentMixed(AppUtils.tanH(0, 2 * sentimentMap.get("mixed")));
             tempukpMappings.setSentimentNegative(AppUtils.tanH(0, 2 * sentimentMap.get("negative")));

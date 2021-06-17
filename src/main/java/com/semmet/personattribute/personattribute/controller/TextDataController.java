@@ -48,7 +48,7 @@ public class TextDataController {
 
         // update the DB with new entities and key phrases
         //Map<String, Long> entityIdMapping = new HashMap<>();
-        Map<String, Long> keyPhraseIdMapping = new HashMap<>();
+        //Map<String, Long> keyPhraseIdMapping = new HashMap<>();
 
         for(var entity: allEntities) {
             List<Entities> existingEntity = entitiesRepository.findByEntity(entity.getEntity());
@@ -68,9 +68,9 @@ public class TextDataController {
             if(existingKeyPhrases.isEmpty()) {
 
                 var savedKeyPhrase = keyPhrasesRepository.save(keyPhrase);
-                keyPhraseIdMapping.put(keyPhrase.getKeyPhrase(), savedKeyPhrase.getId());
+                //keyPhraseIdMapping.put(keyPhrase.getKeyPhrase(), savedKeyPhrase.getId());
             } else {
-                keyPhraseIdMapping.put(keyPhrase.getKeyPhrase(), existingKeyPhrases.get(0).getId());
+                //keyPhraseIdMapping.put(keyPhrase.getKeyPhrase(), existingKeyPhrases.get(0).getId());
             }
         }
 
@@ -98,10 +98,10 @@ public class TextDataController {
             }
         }
 
-        UserKeyPhraseMappings[] allUserKeyPhraseMappings = textAnalysisService.getUserKeyPhraseMappingsObjects(userId, keyPhraseIdMapping);
+        UserKeyPhraseMappings[] allUserKeyPhraseMappings = textAnalysisService.getUserKeyPhraseMappingsObjects(userId);
 
         for(var ukpMapping: allUserKeyPhraseMappings) {
-            List<UserKeyPhraseMappings> existingukpMappings = userKeyPhrasesMappingsRepository.findByUserIdAndKeyPhraseId(userId, ukpMapping.getKeyPhraseId());
+            List<UserKeyPhraseMappings> existingukpMappings = userKeyPhrasesMappingsRepository.findByUser_UserIdAndKeyPhrase_Id(userId, ukpMapping.getKeyPhrase().getId());
 
             if(existingukpMappings.isEmpty()) {
                 // handle the case with new ukpMappings
