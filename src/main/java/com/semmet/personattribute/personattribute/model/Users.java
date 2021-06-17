@@ -1,5 +1,7 @@
 package com.semmet.personattribute.personattribute.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,7 +12,7 @@ import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-public class Users {
+public class Users implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

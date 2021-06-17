@@ -79,7 +79,7 @@ public class TextDataController {
         UserEntityMappings[] allUserEntityMappings = textAnalysisService.getUserEntityMappingsObjects(userId);
 
         for(var ueMapping: allUserEntityMappings) {
-            List<UserEntityMappings> existingueMappings = userEntityMappingsRepository.findByUserIdAndEntity(userId, ueMapping.getEntity().getId());
+            List<UserEntityMappings> existingueMappings = userEntityMappingsRepository.findByUser_UserIdAndEntity_Id(userId, ueMapping.getEntity().getId());
 
             if(existingueMappings.isEmpty()) {
                 // handle the case with new ueMappings
