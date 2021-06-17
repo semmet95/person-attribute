@@ -49,21 +49,14 @@ public class TextDataController {
 
         // update the DB with new entities and key phrases
         for(var entity: allEntities) {
-            List<Entities> existingEntity = entitiesRepository.findByEntity(entity.getEntity());
-            if(existingEntity.isEmpty()) {
+            if(entitiesRepository.findByEntity(entity.getEntity()).isEmpty()) {
                 entitiesRepository.save(entity);
             }
         }
 
         for(var keyPhrase: allKeyPhrases) {
-            List<KeyPhrases> existingKeyPhrases = keyPhrasesRepository.findByKeyPhrase(keyPhrase.getKeyPhrase());
-
-            if(existingKeyPhrases.isEmpty()) {
-
-                var savedKeyPhrase = keyPhrasesRepository.save(keyPhrase);
-                //keyPhraseIdMapping.put(keyPhrase.getKeyPhrase(), savedKeyPhrase.getId());
-            } else {
-                //keyPhraseIdMapping.put(keyPhrase.getKeyPhrase(), existingKeyPhrases.get(0).getId());
+            if(keyPhrasesRepository.findByKeyPhrase(keyPhrase.getKeyPhrase()).isEmpty()) {
+                keyPhrasesRepository.save(keyPhrase);
             }
         }
 
