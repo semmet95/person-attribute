@@ -1,6 +1,5 @@
 package com.semmet.personattribute.personattribute.controller;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -38,8 +37,10 @@ public class TextDataController {
 
     @PostMapping(produces = "application/json", consumes = "application/x-www-form-urlencoded;charset=UTF-8")
     public void addTextData(@RequestParam Map<String, String> body) {
-        var textData = body.get("textData").toLowerCase();
+        var textData = body.get("textData").toLowerCase().replace("\n", " ").trim();
         var userId = Long.parseLong(body.get("userId"));
+
+        textData = textData.replaceAll("[^a-zA-Z0-9\\s]", "");
 
         // use Comprehend to extract all the data first
         Map<String, Float> sentimentMap = textAnalysisService.analyzeText(textData, "en");
@@ -47,18 +48,10 @@ public class TextDataController {
         KeyPhrases[] allKeyPhrases = textAnalysisService.getKeyPhrasesObjects();
 
         // update the DB with new entities and key phrases
-        //Map<String, Long> entityIdMapping = new HashMap<>();
-        //Map<String, Long> keyPhraseIdMapping = new HashMap<>();
-
         for(var entity: allEntities) {
             List<Entities> existingEntity = entitiesRepository.findByEntity(entity.getEntity());
-
             if(existingEntity.isEmpty()) {
-
-                var savedEntity = entitiesRepository.save(entity);
-                //entityIdMapping.put(entity.getEntity(), savedEntity.getId());
-            } else {
-                //entityIdMapping.put(entity.getEntity(), existingEntity.get(0).getId());
+                entitiesRepository.save(entity);
             }
         }
 
@@ -75,7 +68,6 @@ public class TextDataController {
         }
 
         // update the DB with new mappings
-        //UserEntityMappings[] allUserEntityMappings = textAnalysisService.getUserEntityMappingsObjects(userId, entityIdMapping);
         UserEntityMappings[] allUserEntityMappings = textAnalysisService.getUserEntityMappingsObjects(userId);
 
         for(var ueMapping: allUserEntityMappings) {

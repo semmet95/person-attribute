@@ -973,3 +973,245 @@ java.sql.SQLSyntaxErrorException: Table 'person_attribute.user_entity_mappings' 
 2021-06-17 19:59:05.127  INFO 8207 --- [http-nio-8080-exec-5] c.s.p.personattribute.util.AppLogger     : detected key phrase:jain sir and geeksforgeeks team with confidence:0.950169
 2021-06-17 19:59:05.128  INFO 8207 --- [http-nio-8080-exec-5] c.s.p.personattribute.util.AppLogger     : detected key phrase:such a gesture with confidence:0.999994
 2021-06-17 19:59:05.129  INFO 8207 --- [http-nio-8080-exec-5] c.s.p.personattribute.util.AppLogger     : detected key phrase:recognition with confidence:1.000000
+2021-06-17 20:12:18.487  INFO 9816 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Starting PersonAttributeApplication using Java 11.0.11 on Bella with PID 9816 (/home/amit/Projects/JAVA/Spring/spring boot/person-attribute/bin/main started by amit in /home/amit/Projects/JAVA/Spring/spring boot/person-attribute)
+2021-06-17 20:12:18.497  INFO 9816 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : No active profile set, falling back to default profiles: default
+2021-06-17 20:12:18.682  INFO 9816 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-06-17 20:12:18.686  INFO 9816 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-06-17 20:12:21.112  INFO 9816 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-17 20:12:21.272  INFO 9816 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 141 ms. Found 5 JPA repository interfaces.
+2021-06-17 20:12:23.063  INFO 9816 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-06-17 20:12:23.082  INFO 9816 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-17 20:12:23.083  INFO 9816 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-17 20:12:23.316  INFO 9816 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-17 20:12:23.317  INFO 9816 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4627 ms
+2021-06-17 20:12:23.928  INFO 9816 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-17 20:12:24.047  INFO 9816 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-17 20:12:24.412  INFO 9816 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-17 20:12:24.687  INFO 9816 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-17 20:12:24.703  WARN 9816 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-06-17 20:12:26.283  INFO 9816 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-17 20:12:26.419  INFO 9816 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2021-06-17 20:12:28.569  INFO 9816 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-17 20:12:28.593  INFO 9816 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-17 20:12:29.679  WARN 9816 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-17 20:12:30.657  INFO 9816 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-06-17 20:12:30.789  INFO 9816 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-06-17 20:12:30.818  INFO 9816 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Started PersonAttributeApplication in 13.996 seconds (JVM running for 17.347)
+2021-06-17 20:12:30.827  INFO 9816 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-17 20:12:30.831  INFO 9816 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-17 20:13:44.916  INFO 9816 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-17 20:13:44.918  INFO 9816 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-17 20:13:44.921  INFO 9816 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-06-17 20:13:48.697  INFO 9816 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : neutral score: 0.025423879
+2021-06-17 20:13:48.697  INFO 9816 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : negative score: 0.005664279
+2021-06-17 20:13:48.698  INFO 9816 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : positive score: 0.1061936
+2021-06-17 20:13:48.699  INFO 9816 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : mixed score: 0.8627182
+2021-06-17 20:13:49.099  INFO 9816 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : Entity detected sandeep jain with score 0.995377
+2021-06-17 20:13:49.101  INFO 9816 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : Entity detected geeksforgeeks with score 0.580075
+2021-06-17 20:13:49.466  INFO 9816 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:the last few months with confidence:1.000000
+2021-06-17 20:13:49.467  INFO 9816 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:the technical scripter with confidence:1.000000
+2021-06-17 20:13:49.470  INFO 9816 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:geeksforgeeks with confidence:0.999994
+2021-06-17 20:13:49.471  INFO 9816 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:a silverlevel technical writer award with confidence:0.997054
+2021-06-17 20:13:49.472  INFO 9816 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:super cool
+thanks with confidence:0.803727
+2021-06-17 20:13:49.473  INFO 9816 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:sandeep jain sir and geeksforgeeks team with confidence:0.985227
+2021-06-17 20:13:49.474  INFO 9816 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:such a gesture with confidence:0.999999
+2021-06-17 20:15:38.106  INFO 10055 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Starting PersonAttributeApplication using Java 11.0.11 on Bella with PID 10055 (/home/amit/Projects/JAVA/Spring/spring boot/person-attribute/bin/main started by amit in /home/amit/Projects/JAVA/Spring/spring boot/person-attribute)
+2021-06-17 20:15:38.113  INFO 10055 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : No active profile set, falling back to default profiles: default
+2021-06-17 20:15:38.329  INFO 10055 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-06-17 20:15:38.330  INFO 10055 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-06-17 20:15:40.141  INFO 10055 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-17 20:15:40.294  INFO 10055 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 135 ms. Found 5 JPA repository interfaces.
+2021-06-17 20:15:41.839  INFO 10055 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-06-17 20:15:41.860  INFO 10055 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-17 20:15:41.861  INFO 10055 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-17 20:15:42.122  INFO 10055 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-17 20:15:42.125  INFO 10055 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3792 ms
+2021-06-17 20:15:42.679  INFO 10055 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-17 20:15:42.773  INFO 10055 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-17 20:15:43.034  INFO 10055 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-17 20:15:43.226  INFO 10055 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-17 20:15:43.236  WARN 10055 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-06-17 20:15:44.069  INFO 10055 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-17 20:15:44.122  INFO 10055 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2021-06-17 20:15:51.899  INFO 10055 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-17 20:15:51.930  INFO 10055 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-17 20:15:53.606  WARN 10055 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-17 20:15:54.437  INFO 10055 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-06-17 20:15:54.682  INFO 10055 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-06-17 20:15:54.723  INFO 10055 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Started PersonAttributeApplication in 17.668 seconds (JVM running for 19.288)
+2021-06-17 20:15:54.734  INFO 10055 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-17 20:15:54.743  INFO 10055 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-17 20:16:06.591  INFO 10055 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-17 20:16:06.593  INFO 10055 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-17 20:16:06.597  INFO 10055 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2021-06-17 20:16:09.714  INFO 10055 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : neutral score: 0.025423879
+2021-06-17 20:16:09.715  INFO 10055 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : negative score: 0.005664279
+2021-06-17 20:16:09.715  INFO 10055 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : positive score: 0.1061936
+2021-06-17 20:16:09.716  INFO 10055 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : mixed score: 0.8627182
+2021-06-17 20:16:10.072  INFO 10055 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : Entity detected sandeep jain with score 0.995377
+2021-06-17 20:16:10.079  INFO 10055 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : Entity detected geeksforgeeks with score 0.580075
+2021-06-17 20:16:10.477  INFO 10055 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:the last few months with confidence:1.000000
+2021-06-17 20:16:10.479  INFO 10055 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:the technical scripter with confidence:1.000000
+2021-06-17 20:16:10.480  INFO 10055 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:geeksforgeeks with confidence:0.999994
+2021-06-17 20:16:10.481  INFO 10055 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:a silverlevel technical writer award with confidence:0.997054
+2021-06-17 20:16:10.482  INFO 10055 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:super cool
+thanks with confidence:0.803727
+2021-06-17 20:16:10.483  INFO 10055 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:sandeep jain sir and geeksforgeeks team with confidence:0.985227
+2021-06-17 20:16:10.484  INFO 10055 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:such a gesture with confidence:0.999999
+2021-06-17 20:16:56.969  INFO 10055 --- [Thread-6] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-06-17 20:16:57.062  INFO 10055 --- [Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-17 20:16:57.080  INFO 10055 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-06-17 20:16:57.150  INFO 10055 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-06-17 20:16:57.387  INFO 10055 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Starting PersonAttributeApplication using Java 11.0.11 on Bella with PID 10055 (/home/amit/Projects/JAVA/Spring/spring boot/person-attribute/bin/main started by amit in /home/amit/Projects/JAVA/Spring/spring boot/person-attribute)
+2021-06-17 20:16:57.388  INFO 10055 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : No active profile set, falling back to default profiles: default
+2021-06-17 20:16:57.788  INFO 10055 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-17 20:16:57.818  INFO 10055 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 5 JPA repository interfaces.
+2021-06-17 20:16:58.170  INFO 10055 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-06-17 20:16:58.172  INFO 10055 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-17 20:16:58.177  INFO 10055 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-17 20:16:58.384  INFO 10055 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-17 20:16:58.386  INFO 10055 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 990 ms
+2021-06-17 20:16:58.609  INFO 10055 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-17 20:16:58.618  INFO 10055 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2021-06-17 20:16:58.619  WARN 10055 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-06-17 20:16:58.745  INFO 10055 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2021-06-17 20:16:58.747  INFO 10055 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2021-06-17 20:16:59.260  INFO 10055 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-17 20:16:59.264  INFO 10055 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-17 20:16:59.549  WARN 10055 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-17 20:16:59.774  INFO 10055 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-06-17 20:16:59.825  INFO 10055 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-06-17 20:16:59.832  INFO 10055 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Started PersonAttributeApplication in 2.528 seconds (JVM running for 84.398)
+2021-06-17 20:16:59.837  INFO 10055 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-17 20:16:59.848  INFO 10055 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-06-17 20:16:59.856  INFO 10055 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-17 20:17:39.818  INFO 10327 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Starting PersonAttributeApplication using Java 11.0.11 on Bella with PID 10327 (/home/amit/Projects/JAVA/Spring/spring boot/person-attribute/bin/main started by amit in /home/amit/Projects/JAVA/Spring/spring boot/person-attribute)
+2021-06-17 20:17:39.833  INFO 10327 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : No active profile set, falling back to default profiles: default
+2021-06-17 20:17:40.053  INFO 10327 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-06-17 20:17:40.056  INFO 10327 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-06-17 20:17:42.022  INFO 10327 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-17 20:17:42.195  INFO 10327 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 153 ms. Found 5 JPA repository interfaces.
+2021-06-17 20:17:43.825  INFO 10327 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-06-17 20:17:43.850  INFO 10327 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-17 20:17:43.853  INFO 10327 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-17 20:17:44.080  INFO 10327 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-17 20:17:44.082  INFO 10327 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4022 ms
+2021-06-17 20:17:44.560  INFO 10327 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-17 20:17:44.671  INFO 10327 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-17 20:17:44.981  INFO 10327 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-17 20:17:45.256  INFO 10327 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-17 20:17:45.264  WARN 10327 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-06-17 20:17:46.064  INFO 10327 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-17 20:17:46.152  INFO 10327 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2021-06-17 20:17:54.230  INFO 10327 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-17 20:17:54.258  INFO 10327 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-17 20:17:55.168  WARN 10327 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-17 20:17:55.927  INFO 10327 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-06-17 20:17:56.013  INFO 10327 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-06-17 20:17:56.047  INFO 10327 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Started PersonAttributeApplication in 17.415 seconds (JVM running for 18.892)
+2021-06-17 20:17:56.054  INFO 10327 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-17 20:17:56.060  INFO 10327 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-17 20:18:01.666  INFO 10327 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-17 20:18:01.671  INFO 10327 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-17 20:18:01.676  INFO 10327 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2021-06-17 20:18:04.524  INFO 10327 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : neutral score: 0.025423879
+2021-06-17 20:18:04.524  INFO 10327 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : negative score: 0.005664279
+2021-06-17 20:18:04.525  INFO 10327 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : positive score: 0.1061936
+2021-06-17 20:18:04.526  INFO 10327 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : mixed score: 0.8627182
+2021-06-17 20:18:04.868  INFO 10327 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : Entity detected sandeep jain with score 0.995377
+2021-06-17 20:18:04.869  INFO 10327 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : Entity detected geeksforgeeks with score 0.580075
+2021-06-17 20:18:05.267  INFO 10327 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:the last few months with confidence:1.000000
+2021-06-17 20:18:05.267  INFO 10327 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:the technical scripter with confidence:1.000000
+2021-06-17 20:18:05.268  INFO 10327 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:geeksforgeeks with confidence:0.999994
+2021-06-17 20:18:05.269  INFO 10327 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:a silverlevel technical writer award with confidence:0.997054
+2021-06-17 20:18:05.269  INFO 10327 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:super cool
+thanks with confidence:0.803727
+2021-06-17 20:18:05.270  INFO 10327 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:sandeep jain sir and geeksforgeeks team with confidence:0.985227
+2021-06-17 20:18:05.272  INFO 10327 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:such a gesture with confidence:0.999999
+2021-06-17 20:18:39.651  INFO 10327 --- [SpringContextShutdownHook] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-06-17 20:19:10.836  INFO 10513 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Starting PersonAttributeApplication using Java 11.0.11 on Bella with PID 10513 (/home/amit/Projects/JAVA/Spring/spring boot/person-attribute/bin/main started by amit in /home/amit/Projects/JAVA/Spring/spring boot/person-attribute)
+2021-06-17 20:19:10.849  INFO 10513 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : No active profile set, falling back to default profiles: default
+2021-06-17 20:19:11.046  INFO 10513 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-06-17 20:19:11.057  INFO 10513 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-06-17 20:19:13.298  INFO 10513 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-17 20:19:13.554  INFO 10513 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 232 ms. Found 5 JPA repository interfaces.
+2021-06-17 20:19:15.373  INFO 10513 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-06-17 20:19:15.403  INFO 10513 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-17 20:19:15.404  INFO 10513 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-17 20:19:15.689  INFO 10513 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-17 20:19:15.690  INFO 10513 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4625 ms
+2021-06-17 20:19:16.253  INFO 10513 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-17 20:19:16.353  INFO 10513 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-17 20:19:16.690  INFO 10513 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-17 20:19:17.002  INFO 10513 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-17 20:19:17.019  WARN 10513 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-06-17 20:19:18.051  INFO 10513 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-17 20:19:18.140  INFO 10513 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2021-06-17 20:19:20.289  INFO 10513 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-17 20:19:20.320  INFO 10513 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-17 20:19:21.786  WARN 10513 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-17 20:19:22.848  INFO 10513 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-06-17 20:19:23.059  INFO 10513 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-06-17 20:19:23.121  INFO 10513 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Started PersonAttributeApplication in 13.535 seconds (JVM running for 14.92)
+2021-06-17 20:19:23.137  INFO 10513 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-17 20:19:23.148  INFO 10513 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-17 20:19:37.244  INFO 10513 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-17 20:19:37.247  INFO 10513 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-17 20:19:37.249  INFO 10513 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-06-17 20:19:40.146  INFO 10513 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : neutral score: 0.025423879
+2021-06-17 20:19:40.146  INFO 10513 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : negative score: 0.005664279
+2021-06-17 20:19:40.147  INFO 10513 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : positive score: 0.1061936
+2021-06-17 20:19:40.148  INFO 10513 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : mixed score: 0.8627182
+2021-06-17 20:19:40.479  INFO 10513 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : Entity detected sandeep jain with score 0.995377
+2021-06-17 20:19:40.480  INFO 10513 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : Entity detected geeksforgeeks with score 0.580075
+2021-06-17 20:19:40.910  INFO 10513 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:the last few months with confidence:1.000000
+2021-06-17 20:19:40.914  INFO 10513 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:the technical scripter with confidence:1.000000
+2021-06-17 20:19:40.915  INFO 10513 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:geeksforgeeks with confidence:0.999994
+2021-06-17 20:19:40.916  INFO 10513 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:a silverlevel technical writer award with confidence:0.997054
+2021-06-17 20:19:40.917  INFO 10513 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:super cool
+thanks with confidence:0.803727
+2021-06-17 20:19:40.918  INFO 10513 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:sandeep jain sir and geeksforgeeks team with confidence:0.985227
+2021-06-17 20:19:40.921  INFO 10513 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:such a gesture with confidence:0.999999
+2021-06-17 20:22:12.638  INFO 10757 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Starting PersonAttributeApplication using Java 11.0.11 on Bella with PID 10757 (/home/amit/Projects/JAVA/Spring/spring boot/person-attribute/bin/main started by amit in /home/amit/Projects/JAVA/Spring/spring boot/person-attribute)
+2021-06-17 20:22:12.651  INFO 10757 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : No active profile set, falling back to default profiles: default
+2021-06-17 20:22:12.899  INFO 10757 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-06-17 20:22:12.902  INFO 10757 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-06-17 20:22:14.747  INFO 10757 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-17 20:22:14.908  INFO 10757 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 141 ms. Found 5 JPA repository interfaces.
+2021-06-17 20:22:16.480  INFO 10757 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-06-17 20:22:16.500  INFO 10757 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-17 20:22:16.502  INFO 10757 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-17 20:22:16.719  INFO 10757 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-17 20:22:16.720  INFO 10757 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3816 ms
+2021-06-17 20:22:17.259  INFO 10757 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-17 20:22:17.364  INFO 10757 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-17 20:22:17.638  INFO 10757 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-17 20:22:17.871  INFO 10757 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-17 20:22:17.883  WARN 10757 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-06-17 20:22:18.678  INFO 10757 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-17 20:22:18.773  INFO 10757 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2021-06-17 20:22:20.715  INFO 10757 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-17 20:22:20.735  INFO 10757 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-17 20:22:21.854  WARN 10757 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-17 20:22:22.732  INFO 10757 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-06-17 20:22:22.858  INFO 10757 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-06-17 20:22:22.900  INFO 10757 --- [restartedMain] c.s.p.p.PersonAttributeApplication       : Started PersonAttributeApplication in 11.237 seconds (JVM running for 12.696)
+2021-06-17 20:22:22.906  INFO 10757 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-17 20:22:22.914  INFO 10757 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-17 20:22:27.700  INFO 10757 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-17 20:22:27.703  INFO 10757 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-17 20:22:27.710  INFO 10757 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2021-06-17 20:22:30.639  INFO 10757 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : neutral score: 0.025423879
+2021-06-17 20:22:30.639  INFO 10757 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : negative score: 0.005664279
+2021-06-17 20:22:30.642  INFO 10757 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : positive score: 0.1061936
+2021-06-17 20:22:30.643  INFO 10757 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : mixed score: 0.8627182
+2021-06-17 20:22:31.932  INFO 10757 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : Entity detected sandeep jain with score 0.995377
+2021-06-17 20:22:31.946  INFO 10757 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : Entity detected geeksforgeeks with score 0.580075
+2021-06-17 20:22:32.409  INFO 10757 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:the last few months with confidence:1.000000
+2021-06-17 20:22:32.412  INFO 10757 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:the technical scripter with confidence:1.000000
+2021-06-17 20:22:32.416  INFO 10757 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:geeksforgeeks with confidence:0.999994
+2021-06-17 20:22:32.418  INFO 10757 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:a silverlevel technical writer award with confidence:0.997054
+2021-06-17 20:22:32.420  INFO 10757 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:super cool thanks with confidence:0.803727
+2021-06-17 20:22:32.421  INFO 10757 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:sandeep jain sir and geeksforgeeks team with confidence:0.985227
+2021-06-17 20:22:32.422  INFO 10757 --- [http-nio-8080-exec-2] c.s.p.personattribute.util.AppLogger     : detected key phrase:such a gesture with confidence:0.999999
