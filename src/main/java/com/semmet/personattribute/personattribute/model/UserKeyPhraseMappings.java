@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class UserKeyPhraseMappings {
@@ -11,8 +13,12 @@ public class UserKeyPhraseMappings {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private long userId;
-    private long keyPhraseId;
+    @ManyToOne
+    @JoinColumn(name =  "user_id", referencedColumnName = "userId")
+    private Users user;
+    @ManyToOne
+    @JoinColumn(name = "key_phrase_id", referencedColumnName = "id")
+    private KeyPhrases keyPhrase;
     private float weight;
     private long frequency;
     private float sentimentNeutral;
@@ -77,20 +83,21 @@ public class UserKeyPhraseMappings {
         this.id = id;
     }
 
-    public long getUserId() {
-        return this.userId;
+    public Users getUser() {
+        return this.user;
     }
 
-    public void setUserId(long userId) {
-        this.userId = userId;
+    public void setUser(Users user) {
+        this.user = user;
     }
 
-    public long getKeyPhraseId() {
-        return this.keyPhraseId;
+    public KeyPhrases getKeyPhrase() {
+        return this.keyPhrase;
     }
 
-    public void setKeyPhraseId(long keyPhraseId) {
-        this.keyPhraseId = keyPhraseId;
+    public void setKeyPhrase(KeyPhrases keyPhrase) {
+        this.keyPhrase = keyPhrase;
     }
+
 
 }
