@@ -113,12 +113,17 @@ public class TextAnalysisService {
         for(var entity: entityScoreMap.keySet()) {
 
             var storedUser = userRepository.findByUserId(userId);
+            var tempueMappings = new UserEntityMappings();
+
             if(storedUser.isEmpty()) {
                 AppLogger.LOGGER.error(String.format("user with userId:%d not found", userId));
                 throw new InvalidBodyExceptionHandler();
             }
+            if(entitiesRepository.findByEntity(entity).isEmpty()) {
+                AppLogger.LOGGER.warn(String.format("entity:%s not found in the database, skipping mapping", entity));
+                continue;
+            }
 
-            var tempueMappings = new UserEntityMappings();
             tempueMappings.setEntity(entitiesRepository.findByEntity(entity).get(0));
             tempueMappings.setUser(storedUser.get(0));
             tempueMappings.setFrequency(1);
@@ -142,12 +147,17 @@ public class TextAnalysisService {
         for(var keyPhrase: keyPhraseConfidenceMap.keySet()) {
 
             var storedUser = userRepository.findByUserId(userId);
+            var tempukpMappings = new UserKeyPhraseMappings();
+
             if(storedUser.isEmpty()) {
                 AppLogger.LOGGER.error(String.format("user with userId:%d not found", userId));
                 throw new InvalidBodyExceptionHandler();
             }
+            if(keyPhrasesRepository.findByKeyPhrase(keyPhrase).isEmpty()) {
+                AppLogger.LOGGER.warn(String.format("keyphrase:%s not found in the database, skipping mapping", keyPhrase));
+                continue;
+            }
             
-            var tempukpMappings = new UserKeyPhraseMappings();
             tempukpMappings.setFrequency(1);
             tempukpMappings.setKeyPhrase(keyPhrasesRepository.findByKeyPhrase(keyPhrase).get(0));
             tempukpMappings.setUser(storedUser.get(0));

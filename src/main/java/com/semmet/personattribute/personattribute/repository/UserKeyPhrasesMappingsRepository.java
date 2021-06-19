@@ -11,4 +11,6 @@ import org.springframework.stereotype.Repository;
 public interface UserKeyPhrasesMappingsRepository extends CrudRepository<UserKeyPhraseMappings, Long> {
 
     public List<UserKeyPhraseMappings> findByUser_UserIdAndKeyPhrase_Id(long userId, long keyPhraseId);
+
+    public List<UserKeyPhraseMappings> findAllByUser_UserId(long userId);
 }

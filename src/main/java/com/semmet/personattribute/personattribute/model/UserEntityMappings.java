@@ -7,12 +7,15 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class UserEntityMappings {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name =  "user_id", referencedColumnName = "userId")
     private Users user;
