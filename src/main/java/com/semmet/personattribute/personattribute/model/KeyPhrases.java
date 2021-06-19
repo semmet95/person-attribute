@@ -10,7 +10,7 @@ import javax.persistence.Id;
 public class KeyPhrases {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(nullable = false, unique = true)
     private String keyPhrase;
