@@ -36,7 +36,5 @@ out/
 ### VS Code ###
 .vscode/
 
-### logs ###
-*.log*
-person-attribute.log*
-person-attribute.log
+### logs folder ###
+log/
