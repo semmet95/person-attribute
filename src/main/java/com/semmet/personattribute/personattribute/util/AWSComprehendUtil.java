@@ -13,6 +13,16 @@ import software.amazon.awssdk.services.comprehend.model.DetectSentimentRequest;
 import software.amazon.awssdk.services.comprehend.model.Entity;
 import software.amazon.awssdk.services.comprehend.model.KeyPhrase;
 
+/**
+ * AWSComprehendUtil class provides methods that directly use AWS SDK to
+ * communicate with Comprehend service.
+ * @see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/functionality.html">Comprehend text analysis</a>
+ * 
+ * @author Amit Singh
+ * @version 0.1
+ * @since 2021-06-23
+ */
+
 public class AWSComprehendUtil {
     
     private static final Region REGION;
@@ -25,6 +35,16 @@ public class AWSComprehendUtil {
 
     private AWSComprehendUtil() {
     }
+
+    /**
+     * This method uses the Comprehend service to get the detected sentiments
+     * and process the returned response to create a sentiment-score mapping.
+     * @see <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/comprehend/model/DetectSentimentResponse.html">DetectSentimentResponse</a>
+     * 
+     * @param text the text data to be analyzed by Comprehend
+     * @param langCode ISO language code (currently hardcoded in every function call)
+     * @return mapping of the detected sentiments
+     */
 
     public static Map<String, Float> detectSentiment(String text, String langCode) {
         try {
@@ -53,6 +73,16 @@ public class AWSComprehendUtil {
             return null;
         }
     }
+
+    /**
+     * This method uses the Comprehend service to get the detected entities
+     * and process the returned response to create an entity-score mapping.
+     * @see <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/comprehend/model/DetectEntitiesResponse.html">DetectEntitiesResponse</a>
+     * 
+     * @param text the text data to be analyzed by Comprehend
+     * @param langCode ISO language code (currently hardcoded in every function call)
+     * @return mapping of the detected entities
+     */
 
     public static Map<String, Float> detectAllEntities(String text, String langCode) {
 
@@ -85,6 +115,16 @@ public class AWSComprehendUtil {
             return null;
        }
     }
+
+    /**
+     * This method uses the Comprehend service to get the detected key phrases
+     * and process the returned response to create an key phrase-confidence mapping.
+     * @see <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/comprehend/model/DetectKeyPhrasesResponse.html">DetectKeyPhrasesResponse</a>
+     * 
+     * @param text the text data to be analyzed by Comprehend
+     * @param langCode ISO language code (currently hardcoded in every function call)
+     * @return mapping of the detected key phrases
+     */
 
     public static Map<String, Float> detectAllKeyPhrases(String text, String langCode) {
 

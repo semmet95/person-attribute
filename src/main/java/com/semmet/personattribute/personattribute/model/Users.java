@@ -11,6 +11,14 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+/**
+ * Users class models a table that stores users metadata including the userId
+ * 
+ * @author Amit Singh
+ * @version 0.1
+ * @since 2021-06-23
+ */
+
 @Entity
 public class Users implements Serializable {
     

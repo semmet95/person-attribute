@@ -6,6 +6,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * KeyPhrases class models a table that stores key phrases returned by AWS Comprehend
+ * @see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-key-phrases.html">Comprehend Key Phrases</a>
+ * 
+ * @author Amit Singh
+ * @version 0.1
+ * @since 2021-06-23
+ */
+
 @Entity
 public class KeyPhrases {
     

@@ -17,6 +17,17 @@ import com.semmet.personattribute.personattribute.util.AppUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * TextAnalysisService class provides methods and properties that
+ * let you sends requests to, and get reponse from, AWS Comprehend
+ * service. It also creates objects and their mappings in terms of
+ * user objects and entity/key phrase objects.
+ * 
+ * @author Amit Singh
+ * @version 0.1
+ * @since 2021-06-23
+ */
+
 @Service
 public class TextAnalysisService {
 
@@ -55,6 +66,17 @@ public class TextAnalysisService {
         this.keyPhraseConfidenceMap = keyPhraseConfidenceMap;
     }
 
+    /**
+     * This method sends text data to Comprehend and saves the returned mappings
+     * of detected sentiments/key phrases/entities and their scores
+     * @see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Comprehend Entities</a>
+     * @see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-key-phrases.html">Comprehend Key Phrases</a>
+     * @see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-sentiment.html">Comprehend Sentiments</a>
+     * 
+     * @param text the text data to be analyzed by Comprehend
+     * @param langCode ISO language code (currently hardcoded in every function call)
+     * @return mapping of the detected sentiments
+     */
 
     public Map<String, Float> analyzeText(String text, String langCode) {
         
@@ -73,6 +95,14 @@ public class TextAnalysisService {
         return this.sentimentMap;
     }
 
+    /**
+     * This method creates Entities objects from the entities mapping
+     * returned by Comprehend
+     * @see Entities
+     * 
+     * @return array of the Entities objects
+     */
+
     public Entities[] getEntitiesObjects() {
         
         Entities[] allEntities = new Entities[this.entityScoreMap.size()];
@@ -89,6 +119,14 @@ public class TextAnalysisService {
         return allEntities;
     }
 
+    /**
+     * This method creates KeyPhrases objects from the key phrases mapping
+     * returned by Comprehend
+     * @see KeyPhrases
+     * 
+     * @return array of the KeyPhrases objects
+     */
+
     public KeyPhrases[] getKeyPhrasesObjects() {
         
         KeyPhrases[] allKeyPhrases = new KeyPhrases[this.keyPhraseConfidenceMap.size()];
@@ -104,6 +142,15 @@ public class TextAnalysisService {
 
         return allKeyPhrases;
     }
+
+    /**
+     * This method creates new user entity mapping objects between the
+     * user provided as an argument and the entities deteted by Comprehend
+     * @see UserEntityMappings
+     * 
+     * @param userId the user with which the analyzed text data was associated with
+     * @return array of the UserEntityMappings objects
+     */
 
     public UserEntityMappings[] getUserEntityMappingsObjects(long userId) {
         
@@ -138,6 +185,15 @@ public class TextAnalysisService {
 
         return allUserEntityMappings;
     }
+
+    /**
+     * This method creates new user key phrase mapping objects between the
+     * user provided as an argument and the key phrases deteted by Comprehend
+     * @see UserKeyPhraseMappings
+     * 
+     * @param userId the user with which the analyzed text data was associated with
+     * @return array of the UserKeyPhraseMappings objects
+     */
 
     public UserKeyPhraseMappings[] getUserKeyPhraseMappingsObjects(long userId) {
         

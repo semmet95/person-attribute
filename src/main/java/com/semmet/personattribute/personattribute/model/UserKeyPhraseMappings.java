@@ -9,6 +9,19 @@ import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+/**
+ * UserKeyPhraseMappings class models a table that stores mappings between key
+ * phrases used by a user and the user, joining the key phrases' id column, and
+ * that user's userId column.
+ * The sentimental context in which these key phrases are used is stored as well
+ * @see Users
+ * @see KeyPhrases
+ * 
+ * @author Amit Singh
+ * @version 0.1
+ * @since 2021-06-23
+ */
+
 @Entity
 public class UserKeyPhraseMappings {
 

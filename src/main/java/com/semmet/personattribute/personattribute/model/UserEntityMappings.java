@@ -9,6 +9,19 @@ import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+/**
+ * UserEntityMappings class models a table that stores mappings between entities
+ * used by a user and the user, joining the entities' id column, and that user's
+ * userId column.
+ * The sentimental context in which these entities are used is stored as well
+ * @see Users
+ * @see Entities
+ * 
+ * @author Amit Singh
+ * @version 0.1
+ * @since 2021-06-23
+ */
+
 @Entity
 public class UserEntityMappings {
     
