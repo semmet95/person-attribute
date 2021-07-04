@@ -38,4 +38,4 @@ out/
 
 ### logs folder ###
 log/
-
+src/main/resources/application.properties
