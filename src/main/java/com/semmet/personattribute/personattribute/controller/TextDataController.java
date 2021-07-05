@@ -2,10 +2,7 @@ package com.semmet.personattribute.personattribute.controller;
 
 import java.util.Map;
 
-import com.semmet.personattribute.personattribute.model.UserEntityMappings;
-import com.semmet.personattribute.personattribute.model.UserKeyPhraseMappings;
 import com.semmet.personattribute.personattribute.service.TextAnalysisService;
-import com.semmet.personattribute.personattribute.util.AWSComprehendUtil;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

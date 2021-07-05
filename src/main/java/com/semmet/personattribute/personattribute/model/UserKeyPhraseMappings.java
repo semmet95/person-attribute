@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class UserKeyPhraseMappings {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
     @JsonIgnore
     @ManyToOne

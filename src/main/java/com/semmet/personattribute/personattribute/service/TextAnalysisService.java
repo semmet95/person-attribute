@@ -83,17 +83,17 @@ public class TextAnalysisService {
      * @return id of the key phrase
      */
     private long saveDetectedKeyPhrase(String keyPhrase) {
-        List<KeyPhrases> existingEntity = keyPhrasesRepository.findByKeyPhrase(keyPhrase);
+        List<KeyPhrases> existingKeyPhrase = keyPhrasesRepository.findByKeyPhrase(keyPhrase);
 
-        if(!existingEntity.isEmpty()) {
-            return existingEntity.get(0).getId();
+        if(!existingKeyPhrase.isEmpty()) {
+            return existingKeyPhrase.get(0).getId();
         }
 
-        var tempEntity = new Entities();
-        tempEntity.setEntity(keyPhrase);
-        tempEntity = entitiesRepository.save(tempEntity);
+        var tempKeyPhrase = new KeyPhrases();
+        tempKeyPhrase.setKeyPhrase(keyPhrase);
+        tempKeyPhrase = keyPhrasesRepository.save(tempKeyPhrase);
 
-        return tempEntity.getId();
+        return tempKeyPhrase.getId();
     }
 
     /**
@@ -128,6 +128,8 @@ public class TextAnalysisService {
                 tempukpMappings.setSentimentNeutral(AppUtils.tanH(0, 2 * sentimentMap.get("neutral")));
                 tempukpMappings.setSentimentPositive(AppUtils.tanH(0, 2 * sentimentMap.get("positive")));
                 tempukpMappings.setWeight(AppUtils.tanH(0, 2 * confidence));
+
+                userKeyPhrasesMappingsRepository.save(tempukpMappings);
             } else {
                 //update the existing ueMapping
                 var tempukpMappings = existingukpMappings.get(0);
@@ -175,6 +177,8 @@ public class TextAnalysisService {
                 tempueMappings.setSentimentNeutral(AppUtils.tanH(0, 2 * sentimentMap.get("neutral")));
                 tempueMappings.setSentimentPositive(AppUtils.tanH(0, 2 * sentimentMap.get("positive")));
                 tempueMappings.setWeight(AppUtils.tanH(0, 2 * weight));
+
+                userEntityMappingsRepository.save(tempueMappings);
             } else {
                 //update the existing ueMapping
                 var tempueMappings = existingueMappings.get(0);
