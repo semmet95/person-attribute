@@ -60,8 +60,8 @@ public class UserController {
         user.setPhoneNum(body.get("phoneNum"));
         //user.setUserId(Long.parseLong(body.get("userId")));
         
-        userRepository.save(user);
+        user = userRepository.save(user);
 
-        return userRepository.findByUserId(Long.parseLong(body.get("userId"))).get(0);
+        return user;
     }
 }

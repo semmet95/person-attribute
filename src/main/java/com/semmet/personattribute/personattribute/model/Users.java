@@ -2,7 +2,6 @@ package com.semmet.personattribute.personattribute.model;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,9 +22,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Users implements Serializable {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private long id;
-    @Column(nullable = false, unique = true)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long userId;
     @JsonIgnore
@@ -37,15 +33,6 @@ public class Users implements Serializable {
     @Size(min = 18, max = 150)
     private int age;
     private String gender;
-
-
-    public long getId() {
-        return this.id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public long getUserId() {
         return this.userId;

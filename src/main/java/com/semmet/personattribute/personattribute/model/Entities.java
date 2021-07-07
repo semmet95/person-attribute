@@ -19,7 +19,7 @@ import javax.persistence.Id;
 public class Entities {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(nullable = false, unique = true)
     private String entity;
