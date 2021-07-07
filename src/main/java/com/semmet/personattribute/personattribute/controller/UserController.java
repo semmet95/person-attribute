@@ -58,7 +58,7 @@ public class UserController {
         user.setGender(body.get("gender"));
         user.setName(body.get("name"));
         user.setPhoneNum(body.get("phoneNum"));
-        user.setUserId(Long.parseLong(body.get("userId")));
+        //user.setUserId(Long.parseLong(body.get("userId")));
         
         userRepository.save(user);
 
